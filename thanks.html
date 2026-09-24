@@ -1,11 +1,26 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
 <meta name="robots" content="noindex"><title>Thank you · True North Local</title>
 <style>body{margin:0;background:#f6f3ee;color:#1d2a3a;font:17px/1.6 Georgia,serif}
 main{max-width:560px;margin:12vh auto;padding:0 24px}h1{font-weight:400;font-size:40px;line-height:1.1}
-p{font-family:-apple-system,"Segoe UI",Roboto,sans-serif;color:#46505c}a{color:#b4532a}</style>
+p{font-family:-apple-system,"Segoe UI",Roboto,sans-serif;color:#46505c}a{color:#b4532a}
+.order{font:600 20px/1.3 -apple-system,"Segoe UI",Roboto,sans-serif;color:#1d2a3a;letter-spacing:.04em}</style>
 </head><body><main><h1>Thanks, you're in.</h1>
+<p id="order-line" hidden>Your order number is <span class="order" id="order"></span>. Keep it for
+your records and quote it if you contact us.</p>
 <p>Your payment went through and Stripe has emailed your receipt. Within one business day we'll
 email you from truenorthlocal993@gmail.com to set up your service. You'll approve every message and page before
-anything goes live.</p><p><a href="index.html">Back to True North Local</a></p></main></body></html>
+anything goes live.</p>
+
+<p><a href="index.html">Back to True North Local</a></p></main>
+<script>
+(function () {
+  var id = new URLSearchParams(location.search).get("order") || "";
+  var tail = id.replace(/[^A-Za-z0-9]/g, "").slice(-6).toUpperCase();
+  if (tail.length === 6) {
+    document.getElementById("order").textContent = "TNL-" + tail;
+    document.getElementById("order-line").hidden = false;
+  }
+})();
+</script></body></html>
