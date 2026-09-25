@@ -90,10 +90,13 @@ tbody th{font:400 19px var(--serif)}.sr{position:absolute;width:1px;height:1px;o
 .chat-panel[hidden]{display:none}
 .chat-head{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid var(--line)}.chat-x{background:none;border:0;font-size:24px;cursor:pointer;color:var(--ink-2)}
 .chat-log{padding:14px 16px;overflow-y:auto;display:grid;gap:10px;flex:1;align-content:start}.chat-log .m{margin:0;padding:10px 12px;border-radius:10px;max-width:88%}
-.chat-log .bot{background:var(--paper-2)}.chat-log .me{background:var(--ink);color:var(--paper);justify-self:end}.chat-log a{color:var(--accent);font-weight:600}
+.chat-log .bot{background:var(--paper-2);justify-self:start}.chat-log .me{background:var(--ink);color:var(--paper);justify-self:end}.chat-log a{color:var(--accent);font-weight:600}
 .chat-quick{display:flex;flex-wrap:wrap;gap:6px;padding:0 16px 10px}.chat-quick button{background:none;border:1px solid var(--line);border-radius:999px;padding:6px 10px;font:13px var(--sans);cursor:pointer;color:var(--ink)}
 .chat-form{display:flex;gap:8px;padding:10px 16px;border-top:1px solid var(--line)}.chat-form input{flex:1;min-width:0;border:1px solid var(--line);border-radius:6px;padding:10px;font:15px var(--sans);background:#fff;color:var(--ink)}
 .chat-form button{background:var(--ink);color:var(--paper);border:0;border-radius:6px;padding:0 14px;font:600 14px var(--sans);cursor:pointer}
+.chat-log .typing{display:flex;justify-self:start;width:auto;gap:4px;align-items:center;padding:12px 14px}.chat-log .typing i{width:7px;height:7px;border-radius:50%;background:var(--muted);animation:dot 1.2s infinite ease-in-out}
+.chat-log .typing i:nth-child(2){animation-delay:.15s}.chat-log .typing i:nth-child(3){animation-delay:.3s}
+@keyframes dot{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-3px)}}
 .chat-note{font-size:12px;color:var(--muted);padding:0 16px 12px}
 .faq details{border-top:1px solid var(--line);padding:24px 0}.faq details:last-child{border-bottom:1px solid var(--line)}
 .faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:24px;font:400 21px/1.3 var(--serif)}.faq summary::-webkit-details-marker{display:none}
@@ -190,18 +193,26 @@ form=box.querySelector(".chat-form"),quick=box.querySelector(".chat-quick");
 function say(who,text,link){var p=document.createElement("p");p.className="m "+who;
 p.textContent=text;if(link){var a=document.createElement("a");a.href=link.href;
 a.textContent=link.text;p.appendChild(document.createTextNode(" "));p.appendChild(a);}
-log.appendChild(p);log.scrollTop=log.scrollHeight;}
+log.appendChild(p);log.scrollTop=log.scrollHeight;return p;}
+var queue=[],busy=false;
+function reply(text,link){queue.push([text,link]);if(!busy)next();}
+function next(){if(!queue.length){busy=false;return;}busy=true;var item=queue.shift();
+var dots=document.createElement("p");dots.className="m bot typing";dots.setAttribute("aria-label","typing");
+dots.appendChild(document.createElement("i"));dots.appendChild(document.createElement("i"));dots.appendChild(document.createElement("i"));
+log.appendChild(dots);log.scrollTop=log.scrollHeight;
+var wait=Math.min(2600,700+item[0].length*14);
+setTimeout(function(){dots.remove();say("bot",item[0],item[1]);setTimeout(next,350);},wait);}
 function mail(q){return "mailto:"+d.email+"?subject="+encodeURIComponent("Question from the website")
 +"&body="+encodeURIComponent((q?q+"\n\n":"")+"My business: \nBest way to reach me: ");}
-function handoff(q){if(d.email){say("bot","Happy to help personally. Tap below to email us and we'll reply within one business day.",{href:mail(q),text:"Email "+d.name});}
-else{say("bot","Please use the contact section at the bottom of this page.");}}
+function handoff(q){if(d.email){reply("Happy to help personally. Tap below to email us and we'll reply within one business day.",{href:mail(q),text:"Email "+d.name});}
+else{reply("Please use the contact section at the bottom of this page.");}}
 function answer(q){var s=" "+q.toLowerCase()+" ",best=null,score=0;
 d.topics.forEach(function(t){var n=0;t.k.forEach(function(k){if(s.indexOf(k)>-1)n+=k.length;});
 if(n>score){score=n;best=t;}});
-if(!best){say("bot","I'm not sure about that one.");handoff(q);return;}
-if(best.a==="HANDOFF"){handoff(q);return;}say("bot",best.a);}
+if(!best){reply("I'm not sure about that one.");handoff(q);return;}
+if(best.a==="HANDOFF"){handoff(q);return;}reply(best.a);}
 function toggle(show){panel.hidden=!show;open.setAttribute("aria-expanded",show);
-if(show&&!log.childNodes.length){say("bot","Hi! Ask me about our services, prices or how ordering works.");}
+if(show&&!log.childNodes.length){reply("Hi! Ask me about our services, prices or how ordering works.");}
 if(show)form.q.focus();}
 open.addEventListener("click",function(){toggle(panel.hidden);});
 box.querySelector(".chat-x").addEventListener("click",function(){toggle(false);});
