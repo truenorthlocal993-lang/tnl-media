@@ -68,7 +68,7 @@ border-radius:10px;padding:3px;background:#fff}.actions{display:flex;flex-wrap:w
 <main class="wrap"><section class="bundles"><h2>Bundle and save</h2><p class="muted">Get more for less when you order together.</p><div class="row"><article class="bundle"><p class="save">Save $48</p><h3>Get Noticed Kit</h3><p>Banner for your storefront, 10 yard signs for your jobs, and 500 business cards.</p><p class="price"><s>$427</s> $379</p><a class="btn solid" href="#design" data-design="banner">Design yours</a></article><article class="bundle"><p class="save">Save $79</p><h3>Crew Kit</h3><p>12 hats and 25 shirts so your whole team looks like a team.</p><p class="price"><s>$748</s> $669</p><a class="btn solid" href="#design" data-design="hats">Design yours</a></article><article class="bundle"><p class="save">Save $205</p><h3>Everything Kit</h3><p>All six, designed to match your website. Our best deal.</p><p class="price"><s>$1,304</s> $1,099</p><a class="btn solid" href="#design" data-design="hats">Design yours</a></article></div></section><div class="grid"><article class="item"><p class="spec">Cotton twill · stitched logo</p><h3>Embroidered hats</h3><p>Your logo stitched on classic dad hats. Great for your crew or as giveaways.</p><p class="price">$299<span> / 12 hats</span></p><a class="btn line" href="#design" data-design="hats">Design yours</a></article><article class="item"><p class="spec">100% combed cotton · soft print</p><h3>Logo T-shirts</h3><p>Soft, comfortable tees with your logo front and back. Your team looks like a team.</p><p class="price">$449<span> / 25 shirts</span></p><a class="btn line" href="#design" data-design="tees">Design yours</a></article><article class="item"><p class="spec">13 oz vinyl · metal grommets</p><h3>Vinyl banner</h3><p>Weatherproof banner with grommets, for your storefront, events or job sites.</p><p class="price">$149<span> / 3 x 6 ft</span></p><a class="btn line" href="#design" data-design="banner">Design yours</a></article><article class="item"><p class="spec">4 mm plastic · metal stakes</p><h3>Yard signs</h3><p>18 x 24 in, double-sided, with metal stakes. Put one at every job you finish.</p><p class="price">$199<span> / 10 signs + stakes</span></p><a class="btn line" href="#design" data-design="yard-signs">Design yours</a></article><article class="item"><p class="spec">16 pt stock · both sides</p><h3>Business cards</h3><p>Thick, full-color cards that match your website.</p><p class="price">$79<span> / 500 cards</span></p><a class="btn line" href="#design" data-design="cards">Design yours</a></article><article class="item"><p class="spec">30 mil · weatherproof</p><h3>Car magnets</h3><p>12 x 24 in magnets that turn your truck or car into a moving ad.</p><p class="price">$129<span> / set of 2</span></p><a class="btn line" href="#design" data-design="magnets">Design yours</a></article></div><section class="quality" id="quality"><h2>Made to last</h2><p class="muted">No cheap giveaway junk. Here's what you're getting:</p><ul><li><h3>Embroidered hats</h3><p>Classic cotton-twill dad hats (Yupoong 6245CM or equal), adjustable strap. Your logo is stitched in thread, not printed, so it won&#x27;t peel or fade.</p></li><li><h3>Logo T-shirts</h3><p>Soft, lightweight 100% combed ring-spun cotton tees (Bella+Canvas 3001 or equal). Printed with water-based inks that stay soft and hold up in the wash.</p></li><li><h3>Vinyl banners</h3><p>Heavy 13 oz outdoor vinyl with hemmed edges and metal grommets. Full-color, weather-resistant printing.</p></li><li><h3>Yard signs</h3><p>4 mm corrugated plastic, printed on both sides, with sturdy metal H-stakes. Made to handle rain and sun.</p></li><li><h3>Business cards</h3><p>Thick 16 pt card stock with sharp full-color printing on both sides.</p></li><li><h3>Car magnets</h3><p>Thick 30 mil vehicle magnets with rounded corners and weather-resistant printing. They come off clean, with no residue.</p></li></ul><div class="promise"><strong>You see it before we print it.</strong> Every order starts with a free digital proof. Nothing is made until you say it looks right.</div></section><section class="designer" id="design"><h2>Design yours right here</h2>
 <p class="muted">Pick a product, add your logo and words, choose colors and a font. The preview updates as you go.</p>
 <div class="dz"><div class="stage"><canvas id="dcanvas" width="800" height="680" aria-label="Live preview of your design"></canvas>
-<small>Preview only. We send a print-ready proof before anything is made.</small></div>
+<small>This is your print design at the real size and shape. We send a proof on the actual product before anything is made.</small></div>
 <div class="controls">
 <div><strong style="color:var(--ink)">1. Product</strong><div class="pick" id="dprod"><button type="button" data-p="hats" aria-pressed="false">Embroidered hats</button><button type="button" data-p="tees" aria-pressed="false">Logo T-shirts</button><button type="button" data-p="banner" aria-pressed="false">Vinyl banner</button><button type="button" data-p="yard-signs" aria-pressed="false">Yard signs</button><button type="button" data-p="cards" aria-pressed="false">Business cards</button><button type="button" data-p="magnets" aria-pressed="false">Car magnets</button></div></div>
 <label>2. Your logo or a photo <input type="file" id="dlogo" accept="image/*"></label>
@@ -76,7 +76,7 @@ border-radius:10px;padding:3px;background:#fff}.actions{display:flex;flex-wrap:w
 <label>Second line (phone, website or slogan) <input type="text" id="dline" value="" maxlength="50" placeholder="e.g. (555) 010-2233"></label>
 <label>4. Font <select id="dfont"><option>Manrope</option><option>Bebas Neue</option><option>Oswald</option><option>Playfair Display</option><option>Pacifico</option><option>Inter</option></select></label>
 <div><strong style="color:var(--ink)">5. Colors</strong><div class="colors">
-<label style="font-weight:500;font-size:13px">Product<input type="color" id="dbase" value="#1f2a44"></label>
+<label style="font-weight:500;font-size:13px">Background<input type="color" id="dbase" value="#1f2a44"></label>
 <label style="font-weight:500;font-size:13px">Text<input type="color" id="dtext" value="#ffffff"></label>
 <label style="font-weight:500;font-size:13px">Accent<input type="color" id="daccent" value="#e8672c"></label></div></div>
 <div class="actions"><button class="btn solid" type="button" id="dsave">Download my design</button>
@@ -86,31 +86,36 @@ border-radius:10px;padding:3px;background:#fff}.actions{display:flex;flex-wrap:w
 <script>
 (function(){
 var NAMES={"hats": "Embroidered hats", "tees": "Logo T-shirts", "banner": "Vinyl banner", "yard-signs": "Yard signs", "cards": "Business cards", "magnets": "Car magnets"},TO="truenorthlocal993@gmail.com";
-var cv=document.getElementById("dcanvas"),cx=cv.getContext("2d"),S=800/128;
+var cv=document.getElementById("dcanvas"),cx=cv.getContext("2d");
 var st={p:"hats",logo:null};
 function $(i){return document.getElementById(i)}
+// Real print areas, not drawings (owner rule: no slop). Width x height in inches.
 var P={
-hats:{draw:function(c,b,a){c.fillStyle=b;c.fill(new Path2D("M20 72c0-30 19-50 44-50s44 20 44 50z"));c.fillStyle=a;c.fill(new Path2D("M10 72h108c7 0 7 12 0 12H62c-20 0-38-5-52-12z"))},area:[40,36,48,30]},
-tees:{draw:function(c,b){c.fillStyle=b;c.fill(new Path2D("M38 16l15-7h22l15 7 20 16-11 15-11-7v60H40V40l-11 7-11-15z"))},area:[44,30,40,40]},
-banner:{draw:function(c,b){c.fillStyle=b;c.beginPath();c.roundRect(8,28,112,56,3);c.fill();c.fillStyle="#fff";[[13,33],[115,33],[13,79],[115,79]].forEach(function(g){c.beginPath();c.arc(g[0],g[1],2,0,7);c.fill()})},area:[16,34,96,44]},
-"yard-signs":{draw:function(c,b){c.strokeStyle="#94a3b8";c.lineWidth=3;c.beginPath();c.moveTo(46,70);c.lineTo(46,106);c.moveTo(82,70);c.lineTo(82,106);c.stroke();c.fillStyle=b;c.beginPath();c.roundRect(26,14,76,58,3);c.fill()},area:[30,18,68,50]},
-cards:{draw:function(c,b,a){c.save();c.translate(48,62);c.rotate(-0.14);c.fillStyle=a;c.beginPath();c.roundRect(-38,-24,76,46,4);c.fill();c.restore();c.fillStyle=b;c.beginPath();c.roundRect(34,36,84,50,4);c.fill()},area:[38,40,76,42]},
-magnets:{draw:function(c,b){c.fillStyle="#cbd5e1";c.fill(new Path2D("M8 76l12-26h62l20 13h16c4 0 6 3 6 6v9H8z"));c.fillStyle="#1f2a44";[[30,80],[98,80]].forEach(function(w){c.beginPath();c.arc(w[0],w[1],9,0,7);c.fill()});c.fillStyle=b;c.beginPath();c.roundRect(24,52,58,22,2);c.fill()},area:[26,54,54,18]}
+hats:{w:4.5,h:1.75,label:"Hat front, stitched logo area: about 4.5 x 1.75 in"},
+tees:{w:12,h:14,label:"T-shirt front print area: up to 12 x 14 in"},
+banner:{w:72,h:36,label:"Vinyl banner: 6 x 3 ft"},
+"yard-signs":{w:24,h:18,label:"Yard sign: 24 x 18 in, both sides"},
+cards:{w:3.5,h:2,label:"Business card: 3.5 x 2 in"},
+magnets:{w:24,h:12,label:"Car magnet: 24 x 12 in"}
 };
 function fit(t,w,max,font){var s=max;cx.font="700 "+s+"px '"+font+"'";while(s>3&&cx.measureText(t).width>w){s-=0.5;cx.font="700 "+s+"px '"+font+"'"}return s}
 function draw(){
 var base=$("dbase").value,tc=$("dtext").value,ac=$("daccent").value,font=$("dfont").value;
 var name=$("dname").value.trim(),line=$("dline").value.trim();
 cx.setTransform(1,0,0,1,0,0);cx.clearRect(0,0,cv.width,cv.height);cx.fillStyle="#f5f6f8";cx.fillRect(0,0,cv.width,cv.height);
-cx.setTransform(S,0,0,S,0,0);var d=P[st.p];d.draw(cx,base,ac);
-var x=d.area[0],y=d.area[1],w=d.area[2],h=d.area[3],textH=h;
-if(st.logo){var lh=(name||line)?h*0.55:h,r=Math.min(w/st.logo.width,lh/st.logo.height);var iw=st.logo.width*r,ih=st.logo.height*r;
+var d=P[st.p],r=Math.min(700/d.w,540/d.h),pw=d.w*r,ph=d.h*r,px=(800-pw)/2,py=(610-ph)/2;
+cx.shadowColor="rgba(15,23,42,.18)";cx.shadowBlur=24;cx.shadowOffsetY=8;cx.fillStyle=base;cx.fillRect(px,py,pw,ph);
+cx.shadowColor="transparent";cx.setLineDash([8,6]);cx.lineWidth=1.5;cx.strokeStyle="rgba(148,163,184,.9)";
+cx.strokeRect(px+10,py+10,pw-20,ph-20);cx.setLineDash([]);
+cx.fillStyle="#64748b";cx.font="500 20px Inter, Arial";cx.textAlign="center";cx.textBaseline="alphabetic";cx.fillText(d.label,400,660);
+var pad=Math.min(pw,ph)*0.12,x=px+pad,y=py+pad,w=pw-2*pad,h=ph-2*pad,textH=h;
+if(st.logo){var lh=(name||line)?h*0.55:h,r2=Math.min(w/st.logo.width,lh/st.logo.height);var iw=st.logo.width*r2,ih=st.logo.height*r2;
 cx.drawImage(st.logo,x+(w-iw)/2,y+(lh-ih)/2,iw,ih);y+=lh;textH=h-lh}
 cx.textAlign="center";cx.textBaseline="middle";cx.fillStyle=tc;
-if(name&&line){var s1=fit(name,w*0.94,textH*0.55,font);cx.fillText(name,x+w/2,y+textH*0.36);
-cx.fillStyle=ac===base?tc:ac;var s2=fit(line,w*0.94,Math.min(s1*0.55,textH*0.3),font);cx.fillText(line,x+w/2,y+textH*0.78)}
+if(name&&line){var s1=fit(name,w*0.94,Math.min(textH*0.55,w*0.2),font);var s2p=Math.min(s1*0.55,textH*0.3),mid=y+textH/2;cx.fillText(name,x+w/2,mid-s2p*0.75);
+cx.fillStyle=ac===base?tc:ac;fit(line,w*0.94,s2p,font);cx.fillText(line,x+w/2,mid+s1*0.6)}
 else if(name||line){var t=name||line;fit(t,w*0.94,textH*0.7,font);cx.fillText(t,x+w/2,y+textH/2)}
-var body="Hi! Here's my merch design.\n\nProduct: "+NAMES[st.p]+"\nName: "+name+"\nSecond line: "+line+"\nFont: "+font+"\nColors: product "+base+", text "+tc+", accent "+ac+"\n\n(I attached my design image.)";
+var body="Hi! Here's my merch design.\n\nProduct: "+NAMES[st.p]+"\nName: "+name+"\nSecond line: "+line+"\nFont: "+font+"\nColors: background "+base+", text "+tc+", accent "+ac+"\n\n(I attached my design image.)";
 $("dsend").href="mailto:"+TO+"?subject="+encodeURIComponent("Merch design: "+NAMES[st.p])+"&body="+encodeURIComponent(body.replace(/\n/g,"\r\n"));
 }
 function pick(id){st.p=P[id]?id:"hats";document.querySelectorAll("#dprod button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.p===st.p)});draw()}
