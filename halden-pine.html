@@ -1,0 +1,154 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Halden &amp; Pine · Sample site</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root{--ink:#0d0d0d;--paper:#f4f1ec;--brass:#b08d57;--mute:#8b877f}
+*{box-sizing:border-box}html,body{margin:0;background:var(--ink);color:#fff;font-family:Inter,system-ui,sans-serif}
+body.intro{overflow:hidden;height:100vh}
+.demo{position:fixed;inset:0 0 auto 0;z-index:90;background:rgba(244,241,236,.94);color:#4a4235;font:500 11px Inter;letter-spacing:.04em;text-align:center;padding:5px}
+#stage{position:fixed;inset:0;z-index:50;background:var(--ink);overflow:hidden}
+#rule{position:absolute;left:50%;top:50%;height:1px;width:0;background:rgba(255,255,255,.7);transform:translate(-50%,-50%)}
+#mark{position:absolute;left:0;right:0;top:50%;transform:translateY(-130%);text-align:center;font:300 clamp(40px,7vw,104px)/1 Manrope;letter-spacing:.18em;white-space:nowrap}
+#mark span{display:inline-block;opacity:0}
+#sub{position:absolute;left:0;right:0;top:50%;margin-top:22px;text-align:center;font:500 12px Inter;letter-spacing:.32em;text-transform:uppercase;color:var(--mute);opacity:0}
+.win{position:absolute;inset:0;overflow:hidden;opacity:0}
+.win .ph{position:absolute;inset:-3%;background-size:cover;background-position:center}
+#w1 .ph{background-image:url(img/halden/kitchen.jpg)}
+#w1::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.6),rgba(0,0,0,.08) 60%)}
+#t1{position:absolute;left:7vw;bottom:14vh;z-index:2;font:300 clamp(46px,7.6vw,118px)/.95 Manrope;letter-spacing:-.04em;opacity:0}
+em{font:italic 400 1.04em "Instrument Serif",Georgia,serif;letter-spacing:-.01em}
+#index{position:absolute;inset:0;display:grid;grid-template-columns:38% 62%;opacity:0}
+#index ol{list-style:none;margin:0;padding:0 4vw;align-self:center}
+#index li{font:300 clamp(28px,3.6vw,54px)/1.25 Manrope;letter-spacing:-.02em;color:rgba(255,255,255,.25);position:relative;padding:6px 0}
+#index li small{font:500 12px Inter;letter-spacing:.2em;margin-right:18px;vertical-align:middle}
+#index li.on{color:#fff}#index li i{position:absolute;left:0;bottom:0;height:1px;background:var(--brass);width:0}
+#index .pics{position:relative;overflow:hidden}
+#index .pics div{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0}
+#craft{position:absolute;inset:0;opacity:0}
+#c1,#c2{position:absolute;inset:-3%;background-size:cover;background-position:center}
+#c1{background-image:url(img/halden/slab.jpg);filter:grayscale(1) contrast(1.1) brightness(.7)}
+#c2{background-image:url(img/halden/pencil.jpg);filter:grayscale(.3) brightness(.75);opacity:0}
+#ct{position:absolute;left:7vw;top:50%;transform:translateY(-50%);font:300 clamp(40px,6.4vw,100px)/1 Manrope;letter-spacing:-.04em}
+#ct p{margin:0;opacity:0}
+/* the site */
+#site{position:relative;z-index:40;opacity:0;background:var(--paper);color:var(--ink)}
+.nav{position:sticky;top:22px;z-index:60;display:flex;justify-content:space-between;align-items:center;padding:20px 5vw;background:rgba(244,241,236,.86);backdrop-filter:blur(10px)}
+.logo{font:400 15px Manrope;letter-spacing:.3em}
+.nav nav{display:flex;gap:30px;font:500 13px Inter;color:#55514a}
+.cta{display:inline-block;border:1px solid var(--ink);border-radius:999px;padding:11px 20px;font:600 13px Inter;color:var(--ink);text-decoration:none;background:none;cursor:pointer}
+.cta.fill{background:var(--ink);color:var(--paper)}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:4vw;align-items:center;padding:50px 5vw 60px;min-height:calc(100vh - 90px)}
+.kick{font:500 12px Inter;letter-spacing:.28em;text-transform:uppercase;color:var(--mute)}
+.hero h1{margin:22px 0 26px;font:300 clamp(48px,6.6vw,104px)/.96 Manrope;letter-spacing:-.045em}
+.hero h1 em{color:var(--brass)}
+.hero p{font:400 18px/1.6 Inter;color:#4c4841;max-width:30em;margin:0 0 30px}
+.hero .frame{height:min(74vh,640px);border-radius:4px;overflow:hidden;position:relative}
+.hero .frame div{position:absolute;inset:0;background:url(img/halden/exterior.jpg) center/cover}
+.hero .cap{position:absolute;left:16px;bottom:14px;color:#fff;font:500 11px Inter;letter-spacing:.14em;text-transform:uppercase;text-shadow:0 1px 8px rgba(0,0,0,.6)}
+.work{padding:90px 5vw 110px}
+.work h2{font:300 clamp(36px,4.4vw,64px)/1 Manrope;letter-spacing:-.04em;margin:0 0 40px}
+.work h2 em{color:var(--brass)}
+.tiles{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:16px}
+.tile{position:relative;aspect-ratio:3/4;overflow:hidden;border-radius:4px}
+.tile:first-child{aspect-ratio:auto}
+.tile div{position:absolute;inset:0;background-size:cover;background-position:center}
+.tile span{position:absolute;left:14px;bottom:12px;color:#fff;font:500 12px Inter;letter-spacing:.12em;text-transform:uppercase;text-shadow:0 1px 8px rgba(0,0,0,.7)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;padding:0 5vw 110px}
+.steps div{border-top:1px solid #cfc9be;padding-top:18px}.steps b{font:400 13px Inter;letter-spacing:.2em;color:var(--mute)}
+.steps h3{font:400 26px Manrope;margin:10px 0 8px;letter-spacing:-.02em}.steps p{margin:0;color:#5b574f;line-height:1.55}
+footer{padding:30px 5vw;background:var(--ink);color:#9a958c;font-size:12px}
+#panel{position:fixed;top:0;bottom:0;right:0;width:min(420px,92vw);z-index:80;background:#fff;color:var(--ink);padding:70px 34px 30px;box-shadow:-30px 0 60px rgba(0,0,0,.18);transform:translateX(105%)}
+#panel h3{font:300 34px Manrope;letter-spacing:-.03em;margin:0 0 6px}#panel p{color:#5b574f;margin:0 0 22px}
+.days{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:20px}
+.day{border:1px solid #d9d4ca;border-radius:6px;padding:12px 6px;text-align:center;font:600 13px Inter;background:#fff;cursor:pointer}
+.day.on{border-color:var(--ink);background:var(--ink);color:#fff}
+#panel .cta{width:100%;text-align:center;padding:14px}
+#ok{display:none;margin-top:18px;font:500 15px Inter;color:#2f6b3f}
+#end{position:fixed;inset:0;z-index:85;display:grid;place-items:center;background:var(--paper);color:var(--ink);text-align:center;opacity:0;pointer-events:none}
+#end h2{font:300 clamp(36px,5vw,70px) Manrope;letter-spacing:.16em;margin:0}#end p{color:var(--mute);letter-spacing:.06em}
+@media (max-width:860px){.hero,.tiles,.steps{grid-template-columns:1fr}.nav nav{display:none}#index{grid-template-columns:1fr}#index .pics{display:none}.tile:first-child{aspect-ratio:3/4}}
+@media (prefers-reduced-motion:reduce){#stage{display:none}}
+</style></head><body class="intro">
+<div class="demo">SAMPLE WEBSITE BY TRUE NORTH LOCAL FOR A FICTIONAL BUSINESS · PHOTOS: UNSPLASH (STOCK, NOT REAL PROJECTS)</div>
+<div id="stage">
+<div id="rule"></div>
+<div id="mark">HALDEN &amp; PINE</div>
+<div id="sub">Remodeling &amp; custom builds</div>
+<div class="win" id="w1"><div class="ph"></div><div id="t1">Built to be<br><em>lived in.</em></div></div>
+<div id="index"><ol>
+<li><small>01</small>Kitchens<i></i></li><li><small>02</small>Additions<i></i></li>
+<li><small>03</small>Whole homes<i></i></li><li><small>04</small>Baths<i></i></li></ol>
+<div class="pics"><div style="background-image:url(img/halden/kitchen.jpg)"></div><div style="background-image:url(img/halden/exterior.jpg)"></div><div style="background-image:url(img/halden/living.jpg)"></div><div style="background-image:url(img/halden/bath.jpg)"></div></div></div>
+<div id="craft"><div id="c1"></div><div id="c2"></div><div id="ct"><p>Measured twice.</p><p><em>Built once.</em></p></div></div>
+</div>
+<div id="site">
+<header class="nav"><div class="logo">HALDEN &amp; PINE</div><nav><a>Work</a><a>Process</a><a>Studio</a></nav><button class="cta fill" type="button" data-book>Book a design visit</button></header>
+<section class="hero"><div><div class="kick">Kitchens · Additions · Whole homes</div>
+<h1>Homes, <em>rebuilt</em><br>around how you live.</h1>
+<p>One team from first sketch to final walkthrough. A fixed price before we start, a weekly update while we build, and a crew that cleans up every day.</p>
+<button class="cta fill" type="button" data-book>Book a design visit</button>&nbsp; <a class="cta" href="#work">See the work</a></div>
+<div class="frame"><div id="heroimg"></div><span class="cap">Example project · stock photo</span></div></section>
+<section class="work" id="work"><h2>Selected <em>work.</em></h2><div class="tiles">
+<div class="tile"><div style="background-image:url(img/halden/kitchen.jpg)"></div><span>Kitchen · example</span></div>
+<div class="tile"><div style="background-image:url(img/halden/living.jpg)"></div><span>Whole home · example</span></div>
+<div class="tile"><div style="background-image:url(img/halden/bath.jpg)"></div><span>Bath · example</span></div></div></section>
+<section class="steps"><div><b>01</b><h3>Design visit</h3><p>We walk the space with you and listen first.</p></div>
+<div><b>02</b><h3>Fixed price</h3><p>Drawings, materials and one number, before any work starts.</p></div>
+<div><b>03</b><h3>Build</h3><p>A weekly update, a tidy site, and a final walkthrough together.</p></div></section>
+<footer>Halden &amp; Pine is a sample business. Photos: Unsplash (stock, not real projects). Site design by True North Local · truenorthlocalhq.com</footer>
+</div>
+<aside id="panel" aria-label="Book a design visit"><h3>Book a design visit</h3><p>Pick a morning. We'll confirm by text.</p>
+<div class="days"><button class="day" type="button">Tue 9:00</button><button class="day" type="button">Wed 10:30</button><button class="day" type="button" id="d3">Thu 10:00</button><button class="day" type="button">Fri 9:00</button><button class="day" type="button">Sat 11:00</button><button class="day" type="button">Mon 9:30</button></div>
+<button class="cta fill" type="button" id="req">Request this time</button><div id="ok">Requested ✓ (sample booking)</div></aside>
+<div id="end"><div><h2>HALDEN &amp; PINE</h2><p>Sample website by True North Local · truenorthlocalhq.com</p></div></div>
+<script>
+(function(){
+var $=function(id){return document.getElementById(id)};
+var cl=function(x){return Math.max(0,Math.min(1,x))};
+var ease=function(x){x=cl(x);return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2};
+var span=function(t,a,b){return ease((t-a)/(b-a))};
+var lin=function(t,a,b){return cl((t-a)/(b-a))};
+function inout(t,a,b,c,d){return Math.min(span(t,a,b),1-span(t,c,d))}
+var mark=$("mark"),txt=mark.textContent;mark.innerHTML=txt.split("").map(function(c){return "<span>"+(c===" "?"&nbsp;":c.replace("&","&amp;"))+"</span>"}).join("");
+var letters=[].slice.call(mark.querySelectorAll("span"));
+var items=[].slice.call(document.querySelectorAll("#index li")),pics=[].slice.call(document.querySelectorAll("#index .pics div"));
+function apply(t,live){
+ $("rule").style.width=(span(t,.2,1.2)*46)+"vw";$("rule").style.opacity=1-span(t,2.2,2.6);
+ letters.forEach(function(s,i){var v=span(t,.7+i*.06,1.2+i*.06)*(1-span(t,2.3,2.7));s.style.opacity=v;s.style.transform="translateY("+((1-v)*18)+"px)"});
+ $("sub").style.opacity=inout(t,1.5,2.0,2.3,2.7);
+ var w=$("w1"),open=span(t,2.5,4.0);w.style.opacity=inout(t,2.4,2.6,5.2,5.6);
+ w.style.clipPath="inset("+((1-open)*36)+"% "+((1-open)*40)+"% round "+((1-open)*6)+"px)";
+ w.firstChild.style.transform="scale("+(1.18-.12*lin(t,2.5,5.6))+")";
+ var t1=span(t,3.8,4.4);$("t1").style.opacity=t1*(1-span(t,5.2,5.5));$("t1").style.transform="translateY("+((1-t1)*20)+"px)";
+ $("index").style.opacity=inout(t,5.4,5.8,8.4,8.8);
+ var k=Math.max(0,Math.min(3,Math.floor((t-5.7)/0.72)));
+ items.forEach(function(li,i){li.classList.toggle("on",i===k);li.querySelector("i").style.width=(i===k?lin(t,5.7+i*.72,6.3+i*.72)*100:0)+"%"});
+ pics.forEach(function(p,i){var v=i===k?1:0;p.style.opacity=v;p.style.transform="scale("+(1.08-.08*lin(t,5.7+i*.72,6.6+i*.72))+")"});
+ $("craft").style.opacity=inout(t,8.6,9.0,10.9,11.3);
+ $("c1").style.transform="scale("+(1.12-.1*lin(t,8.6,11.3))+")";$("c2").style.opacity=span(t,9.7,10.2);
+ var ps=$("ct").children;ps[0].style.opacity=inout(t,9.0,9.4,10.8,11.1);ps[1].style.opacity=inout(t,9.6,10.0,10.8,11.1);
+ var site=span(t,11.0,11.8);$("site").style.opacity=site;$("stage").style.opacity=1-span(t,11.1,11.8);
+ $("heroimg").style.transform="scale("+(1.1-.1*lin(t,11.0,14.0))+")";
+ if(live)return;
+ window.scrollTo(0,0);$("site").style.transform="translateY("+(-span(t,12.6,13.6)*innerHeight*.92)+"px)";
+ var pn=span(t,14.0,14.6)*(1-span(t,16.2,16.6));$("panel").style.transform="translateX("+((1-pn)*105)+"%)";
+ $("d3").classList.toggle("on",t>14.9);$("req").style.transform=t>15.3&&t<15.45?"scale(.97)":"none";
+ $("ok").style.display=t>15.5?"block":"none";
+ $("end").style.opacity=span(t,16.3,16.9);
+}
+var m=/t=([0-9.]+)/.exec(location.hash);
+if(m){apply(parseFloat(m[1]),false);return}
+var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+var start=performance.now(),END=12.0;
+function finish(){document.body.classList.remove("intro");$("stage").style.display="none";apply(END,true)}
+function tick(now){var t=(now-start)/1000;if(t>=END){finish();return}apply(t,true);requestAnimationFrame(tick)}
+if(reduce)finish();else requestAnimationFrame(tick);
+document.addEventListener("keydown",function(){start=-1e9});document.addEventListener("click",function(){if(document.body.classList.contains("intro"))start=-1e9});
+var panel=$("panel");
+document.querySelectorAll("[data-book]").forEach(function(b){b.addEventListener("click",function(e){e.preventDefault();e.stopPropagation();panel.style.transform="none"})});
+document.addEventListener("click",function(e){if(!panel.contains(e.target)&&!e.target.closest("[data-book]"))panel.style.transform="translateX(105%)"});
+document.querySelectorAll(".day").forEach(function(d){d.addEventListener("click",function(){document.querySelectorAll(".day").forEach(function(x){x.classList.remove("on")});d.classList.add("on")})});
+$("req").addEventListener("click",function(){$("ok").style.display="block"});
+})();
+</script></body></html>
