@@ -1,0 +1,181 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Birch Lane Heating &amp; Air · Sample site</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+:root{--navy:#0a1220;--orange:#e8672c;--amber:#ffb24a;--ink:#0b1220}
+*{box-sizing:border-box}html,body{margin:0;background:#05080e;color:#fff;font-family:Inter,system-ui,sans-serif}
+body.intro{overflow:hidden;height:100vh}
+.demo{position:fixed;inset:0 0 auto 0;z-index:90;background:rgba(255,243,196,.92);color:#5a4300;font:600 12px Inter;text-align:center;padding:5px}
+#stage{position:fixed;inset:0;overflow:hidden;z-index:50;background:#05080e}
+/* real photographs, slow camera moves, cinematic grade */
+.shot{position:absolute;inset:-4%;background-size:cover;background-position:center;opacity:0;will-change:transform,opacity}
+.shot::after{content:"";position:absolute;inset:0}
+#s1{background-image:url(img/birch/thermostat.jpg);filter:saturate(.55) brightness(.62) contrast(1.08)}
+#s1::after{background:linear-gradient(90deg,rgba(4,10,24,.86) 0%,rgba(4,10,24,.35) 55%,rgba(10,30,70,.25) 100%)}
+#s2{background-image:url(img/birch/frost.jpg);filter:saturate(.7) brightness(.8)}
+#s2::after{background:linear-gradient(90deg,rgba(4,12,28,.82),rgba(20,50,95,.3) 70%)}
+#s3{background-image:url(img/birch/snowhouse.jpg);filter:brightness(.8)}
+#s3::after{background:linear-gradient(0deg,rgba(3,8,18,.7),rgba(3,8,18,.15) 50%)}
+.vig{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 50%,transparent 55%,rgba(0,0,0,.55))}
+.grain{position:absolute;inset:-50%;pointer-events:none;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+.kt{position:absolute;left:7vw;max-width:52vw;font:800 clamp(32px,5.2vw,78px)/1.02 Manrope,sans-serif;letter-spacing:-.035em;opacity:0;text-shadow:0 4px 30px rgba(0,0,0,.45)}
+.kt em,.hero em,.svc h2 em{font:italic 400 1.12em "Instrument Serif",Georgia,serif;letter-spacing:0;color:var(--amber)}
+.time{position:absolute;left:7vw;top:13vh;font:600 13px Inter;letter-spacing:.22em;text-transform:uppercase;color:#9fb6d8;opacity:0}
+#hud{position:absolute;right:6vw;top:12vh;min-width:220px;padding:18px 22px;border-radius:18px;background:rgba(8,16,32,.55);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(14px);opacity:0}
+#hud small{display:block;font:600 11px Inter;letter-spacing:.18em;text-transform:uppercase;color:#9fb6d8}
+#hud b{display:block;font:800 54px/1.05 Manrope;letter-spacing:-.04em}
+#hud span{font:600 13px Inter;color:#9fd0ff}
+#phone{position:absolute;right:12vw;bottom:-90vh;width:min(290px,70vw);height:min(580px,72vh);
+ background:#0f1115;border-radius:44px;border:9px solid #1d2026;box-shadow:0 50px 90px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.08);padding:44px 14px 14px;display:flex;flex-direction:column;gap:10px}
+#phone::before{content:"";position:absolute;top:10px;left:50%;width:84px;height:24px;margin-left:-42px;border-radius:14px;background:#000}
+#phone .who{text-align:center;font:600 13px Inter;color:#cfd6e4;margin-bottom:6px}
+.b{max-width:85%;padding:10px 13px;border-radius:18px;font:500 14px/1.35 Inter;opacity:0;transform:translateY(10px)}
+.b.sys{align-self:center;background:none;color:#ff8a7a;font-size:12px;font-weight:600}
+.b.out{align-self:flex-start;background:#2a2d35;color:#fff}
+.b.in{align-self:flex-end;background:#2f7cf6;color:#fff}
+/* the real site */
+#site{position:relative;z-index:40;opacity:0}
+.nav{position:sticky;top:24px;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:18px 6vw}
+.brand{font:800 18px Manrope;display:flex;gap:10px;align-items:center}.brand i{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--amber),var(--orange));display:inline-block}
+.nav nav{display:flex;gap:26px;font:500 14px Inter;color:#e2e8f2}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:15px 26px;font:700 15px Inter;border:0;cursor:pointer;text-decoration:none}
+.btn.hot{background:linear-gradient(135deg,var(--amber),var(--orange));color:#1a0d02;box-shadow:0 12px 30px rgba(232,103,44,.35)}
+.btn.ghost{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(6px)}
+.hero{position:relative;min-height:100vh;display:grid;grid-template-columns:1.1fr .9fr;gap:4vw;align-items:center;padding:70px 6vw 80px;overflow:hidden}
+.hero .bg{position:absolute;inset:-3%;background:url(img/birch/warm-room.jpg) center/cover;z-index:-2}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(6,10,18,.88) 0%,rgba(6,10,18,.62) 42%,rgba(6,10,18,.08) 75%)}
+.pill{display:inline-block;font:600 13px Inter;color:#ffe2c0;background:rgba(255,178,74,.16);border:1px solid rgba(255,178,74,.35);padding:7px 14px;border-radius:999px;margin-bottom:22px}
+.hero h1{margin:0;font:800 clamp(46px,7.2vw,110px)/.95 Manrope;letter-spacing:-.045em;text-shadow:0 6px 40px rgba(0,0,0,.35)}
+.hero h1 .u{position:relative;display:inline-block}
+.hero h1 .u svg{position:absolute;left:0;bottom:-.12em;width:100%;height:.22em;overflow:visible}
+.hero p.lede{font:400 19px/1.55 Inter;color:#dde4ef;max-width:30em;margin:26px 0 30px}
+.acts{display:flex;gap:14px;flex-wrap:wrap}
+.facts{display:flex;gap:26px;margin-top:30px;font:500 13px Inter;color:#c3cddd}
+.card{background:rgba(8,14,26,.62);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(14px);border-radius:24px;padding:24px;box-shadow:0 30px 60px rgba(0,0,0,.35)}
+#tech{justify-self:end;width:min(380px,100%);align-self:end;margin-bottom:6vh}
+#tech .row{display:flex;gap:14px;align-items:center}
+#tech .av{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--amber),var(--orange));display:grid;place-items:center;font:800 18px Manrope;color:#1a0d02}
+#tech b{font:700 17px Manrope}#tech .sub{display:block;color:#b8c4d6;font-size:13px}
+#tech .bar{height:8px;border-radius:9px;background:rgba(255,255,255,.12);margin:20px 0 10px;overflow:hidden}
+#tech .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--amber),var(--orange))}
+#tech .temps{display:flex;justify-content:space-between;font:800 34px Manrope;letter-spacing:-.03em;margin-top:14px}
+#tech .temps small{font:600 11px Inter;letter-spacing:.14em;color:#b8c4d6;display:block;text-transform:uppercase}
+section.svc{padding:100px 6vw;background:#f6f1ea;color:var(--ink)}
+section.svc h2{font:800 clamp(34px,4.6vw,64px)/1 Manrope;letter-spacing:-.04em;margin:0 0 40px}
+section.svc h2 em{color:var(--orange)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.svcard{background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 14px 34px rgba(60,30,10,.08)}
+.svcard img{width:100%;height:150px;object-fit:cover;display:block}
+.svcard .in{padding:20px 22px 22px}
+.svcard h3{font:800 20px Manrope;margin:0 0 6px}.svcard p{margin:0;color:#4b5263;font-size:15px;line-height:1.5}
+.svcard .p{display:block;margin-top:12px;font:700 14px Inter;color:var(--orange)}
+footer{padding:36px 6vw;color:#93a1b8;font-size:13px;background:#05080e}
+#modal{position:fixed;inset:0;z-index:80;display:grid;place-items:center;background:rgba(4,10,20,.6);backdrop-filter:blur(4px);opacity:0;pointer-events:none}
+#modal .box{width:min(440px,90vw);background:#fff;color:var(--ink);border-radius:26px;padding:28px;transform:scale(.9);box-shadow:0 40px 80px rgba(0,0,0,.4)}
+#modal h3{font:800 26px Manrope;margin:0 0 4px}#modal p{margin:0 0 18px;color:#4b5263}
+.slots{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
+.slot{border:2px solid #e5e1da;border-radius:14px;padding:12px;font:700 15px Inter;text-align:center;cursor:pointer;background:#fff}
+.slot.on{border-color:var(--orange);background:#fff3ea;color:#a8410f}
+#modal .btn{width:100%;justify-content:center}
+#done{display:none;text-align:center;padding:10px 0}#done b{display:block;font:800 24px Manrope;margin-bottom:6px}
+#done .ok{width:64px;height:64px;border-radius:50%;background:#1f9d55;color:#fff;display:grid;place-items:center;margin:0 auto 14px;font:800 30px Manrope}
+#end{position:fixed;inset:0;z-index:85;display:grid;place-items:center;text-align:center;background:#05080e;opacity:0;pointer-events:none}
+#end h2{font:800 clamp(36px,5vw,72px) Manrope;letter-spacing:-.04em;margin:0}#end p{color:#9fb3d1;font-size:16px}
+@media (max-width:860px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.nav nav{display:none}#tech{justify-self:start}}
+@media (prefers-reduced-motion:reduce){.kt,#phone{display:none}}
+</style></head><body class="intro">
+<div class="demo">Sample website by True North Local for a fictional business. Not a real company. Photos: Unsplash.</div>
+<div id="stage">
+<div class="shot" id="s1"></div><div class="shot" id="s2"></div><div class="shot" id="s3"></div>
+<div class="time" id="clock">Tuesday · 2:14 AM</div>
+<div class="kt" id="k1" style="top:24vh">It's 2:14 AM.</div>
+<div class="kt" id="k2" style="top:35vh">The heat just <em>quit.</em></div>
+<div class="kt" id="k3" style="top:28vh">Cold doesn't wait</div>
+<div class="kt" id="k4" style="top:39vh">for <em>business hours.</em></div>
+<div class="kt" id="k5" style="top:30vh">So the first company<br>that <em>answers</em> wins.</div>
+<div id="hud"><small>Inside temperature</small><b id="deg">68°</b><span id="trend">Furnace off</span></div>
+<div id="phone"><div class="who">Birch Lane Heating &amp; Air</div>
+<div class="b sys" id="b1">Missed call · 2:14 AM</div>
+<div class="b out" id="b2">Hi, it's Birch Lane. Sorry we missed you. Is your heat out? A tech can come tonight.</div>
+<div class="b in" id="b3">Yes please, it's freezing in here</div>
+<div class="b out" id="b4">Booked. Dan is 38 min away.</div></div>
+<div class="vig"></div><div class="grain"></div>
+</div>
+<div id="site">
+<header class="nav"><div class="brand"><i></i>Birch Lane Heating &amp; Air</div>
+<nav><a>Repairs</a><a>Installs</a><a>Tune-ups</a><a>Reviews</a></nav><a class="btn hot" href="#book" data-book>Book a visit</a></header>
+<section class="hero" id="top"><div class="bg" id="herobg"></div><div>
+<span class="pill">● Techs on call tonight in Springfield</span>
+<h1>Warm again.<br><span class="u"><em>Tonight.</em><svg viewBox="0 0 300 20" preserveAspectRatio="none"><path id="ul" d="M4 14 Q150 2 296 12" fill="none" stroke="#ffb24a" stroke-width="5" stroke-linecap="round" stroke-dasharray="300" stroke-dashoffset="300"/></svg></span></h1>
+<p class="lede">Furnace and AC repair across Springfield. A real person answers day or night, prices are agreed before we start, and most repairs are done on the first visit.</p>
+<div class="acts"><a class="btn hot" href="#book" data-book>Book a visit</a><a class="btn ghost" href="tel:5550142">Call 555-0142</a></div>
+<div class="facts"><span>Family-owned</span><span>Up-front prices</span><span>7 days a week</span></div></div>
+<div class="card" id="tech"><div class="row"><div class="av">DR</div><div><b>Dan R. is on the way</b><span class="sub">Furnace repair · ETA <span id="eta">38</span> min</span></div></div>
+<div class="bar"><i id="etabar" style="width:15%"></i></div>
+<div class="temps"><div><small>Now</small><span id="tnow">54°</span></div><div style="text-align:right"><small>After the fix</small>70°</div></div></div>
+</section>
+<section class="svc" id="services"><h2>Four things we <em>fix fast.</em></h2><div class="grid">
+<div class="svcard"><img src="img/birch/thermostat.jpg" alt="A smart thermostat on a wall" loading="lazy"><div class="in"><h3>Furnace repair</h3><p>No heat, strange noises or short cycling. Same night when a tech is free.</p><span class="p">From $89 visit</span></div></div>
+<div class="svcard"><img src="img/birch/techs-roof.jpg" alt="Technicians servicing rooftop AC units" loading="lazy"><div class="in"><h3>AC repair</h3><p>Warm air, leaks or a unit that won't start, fixed before the heat wave.</p><span class="p">From $89 visit</span></div></div>
+<div class="svcard"><img src="img/birch/tech-panel.jpg" alt="A technician working on an electrical panel" loading="lazy"><div class="in"><h3>New systems</h3><p>Honest options, a written quote and help with rebates.</p><span class="p">Free estimate</span></div></div>
+<div class="svcard"><img src="img/birch/thermo-hand.jpg" alt="A hand adjusting a digital thermostat" loading="lazy"><div class="in"><h3>Tune-ups</h3><p>A yearly check that catches the 2 AM breakdown before it happens.</p><span class="p">$79 · 45 min</span></div></div>
+</div></section>
+<footer>Birch Lane Heating &amp; Air is a sample business. Photos: Unsplash (stock, not real staff). Site design by True North Local · truenorthlocalhq.com</footer>
+</div>
+<div id="modal" role="dialog" aria-label="Book a visit"><div class="box"><div id="pick"><h3>Book a visit</h3><p>Pick a time. We'll text to confirm.</p>
+<div class="slots"><button class="slot" type="button">Tonight 7:30</button><button class="slot" type="button" id="s2b">Tonight 9:00</button><button class="slot" type="button">Tomorrow 8:00</button><button class="slot" type="button">Tomorrow 10:30</button></div>
+<button class="btn hot" type="button" id="confirm">Confirm booking</button></div>
+<div id="done"><div class="ok">✓</div><b>You're booked.</b>Tonight 9:00 · Dan R. (sample booking)</div></div></div>
+<div id="end"><div><h2>Birch Lane Heating &amp; Air</h2><p>Sample website by True North Local · truenorthlocalhq.com</p></div></div>
+<script>
+(function(){
+var $=function(id){return document.getElementById(id)};
+var cl=function(x){return Math.max(0,Math.min(1,x))};
+var ease=function(x){x=cl(x);return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2};
+var span=function(t,a,b){return ease((t-a)/(b-a))};
+var lin=function(t,a,b){return cl((t-a)/(b-a))};
+function show(el,v,dy){el.style.opacity=v;el.style.transform="translateY("+((1-v)*(dy||24))+"px)"}
+function inout(t,a,b,c,d){return Math.min(span(t,a,b),1-span(t,c,d))}
+function shot(el,v,p,z0,z1,dx){el.style.opacity=v;el.style.transform="scale("+(z0+(z1-z0)*p)+") translateX("+(dx*p)+"%)"}
+function apply(t,live){
+ shot($("s1"),inout(t,0,.6,3.0,3.6),lin(t,0,3.6),1.04,1.16,-1.5);
+ shot($("s2"),inout(t,3.0,3.6,5.8,6.4),lin(t,3.0,6.4),1.1,1.0,1);
+ shot($("s3"),inout(t,5.8,6.4,8.6,9.2),lin(t,5.8,9.2),1.02,1.12,0);
+ $("clock").style.opacity=inout(t,.3,.8,2.8,3.2);
+ show($("k1"),inout(t,.6,1.1,2.8,3.2));show($("k2"),inout(t,1.3,1.8,2.8,3.2));
+ show($("k3"),inout(t,3.5,4.0,5.6,6.0));show($("k4"),inout(t,4.0,4.5,5.6,6.0));
+ show($("k5"),inout(t,6.1,6.6,8.2,8.6));
+ show($("hud"),inout(t,1.8,2.4,8.2,8.7),16);
+ var temp=68-14*span(t,2.2,6.0);$("deg").textContent=Math.round(temp)+"°";
+ $("trend").textContent=temp<67?"Dropping · furnace off":"Furnace off";
+ var ph=inout(t,6.4,7.0,8.4,9.0);$("phone").style.bottom="calc("+(-90+ph*100)+"vh)";
+ [["b1",6.8],["b2",7.1],["b3",7.6],["b4",8.0]].forEach(function(p){show($(p[0]),span(t,p[1],p[1]+.3),10)});
+ var site=span(t,8.8,9.8);$("site").style.opacity=site;$("stage").style.opacity=1-span(t,9.2,9.9);
+ $("herobg").style.transform="scale("+(1.12-.08*lin(t,8.8,13))+")";
+ $("ul").style.strokeDashoffset=300*(1-span(t,9.8,10.6));
+ show($("tech"),span(t,10.1,10.7),40);
+ $("tnow").textContent=Math.round(54+16*span(t,10.7,12.6))+"°";
+ $("eta").textContent=Math.round(38-30*span(t,10.7,12.6));$("etabar").style.width=(15+80*span(t,10.7,12.6))+"%";
+ if(live)return;
+ window.scrollTo(0,0);$("site").style.transform="translateY("+(-span(t,12.0,13.2)*innerHeight)+"px)";
+ var m=inout(t,13.6,14.0,16.6,17.0);$("modal").style.opacity=m;$("modal").firstChild.style.transform="scale("+(.9+.1*m)+")";
+ $("s2b").classList.toggle("on",t>14.4);$("confirm").style.transform=t>15.0&&t<15.2?"scale(.96)":"none";
+ var booked=t>15.3;$("pick").style.display=booked?"none":"block";$("done").style.display=booked?"block":"none";
+ $("end").style.opacity=span(t,16.9,17.5);
+}
+var m=/t=([0-9.]+)/.exec(location.hash);
+if(m){apply(parseFloat(m[1]),false);return}
+var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+var start=performance.now(),END=10.8;
+function finish(){document.body.classList.remove("intro");$("stage").style.display="none";apply(END,true)}
+function tick(now){var t=(now-start)/1000;if(t>=END){finish();return}apply(t,true);requestAnimationFrame(tick)}
+if(reduce)finish();else requestAnimationFrame(tick);
+document.addEventListener("keydown",function(){start=-1e9});document.addEventListener("click",function(){if(document.body.classList.contains("intro"))start=-1e9});
+var modal=$("modal");
+document.querySelectorAll("[data-book]").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();modal.style.opacity=1;modal.style.pointerEvents="auto";modal.firstChild.style.transform="none"})});
+modal.addEventListener("click",function(e){if(e.target===modal){modal.style.opacity=0;modal.style.pointerEvents="none";$("pick").style.display="block";$("done").style.display="none"}});
+document.querySelectorAll(".slot").forEach(function(s){s.addEventListener("click",function(){document.querySelectorAll(".slot").forEach(function(x){x.classList.remove("on")});s.classList.add("on")})});
+$("confirm").addEventListener("click",function(){$("pick").style.display="none";$("done").style.display="block"});
+})();
+</script></body></html>
