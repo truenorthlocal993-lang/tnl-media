@@ -1,0 +1,94 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Sarai Beauty Lab · Website mock-up</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+:root{--ink:#17111a;--rose:#e8a0bf;--deep:#b8527e;--gold:#c9a45c;--cream:#fdf6f3;--soft:#f6e6ec}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font:400 17px/1.6 Inter,system-ui,sans-serif}
+img{max-width:100%;display:block}a{color:inherit}
+.mock{position:sticky;top:0;z-index:50;background:#17111a;color:#f3dfe8;font:600 12px Inter;text-align:center;padding:7px 12px;letter-spacing:.02em}
+.wrap{width:min(1080px,100% - 36px);margin-inline:auto}
+header.nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.logo{font:700 24px "Playfair Display",serif;letter-spacing:.01em}.logo em{font-style:italic;color:var(--deep)}
+.nav nav{display:flex;gap:22px;font:500 14px Inter}.nav nav a{text-decoration:none;color:#5b4a55}
+.btn{display:inline-block;background:var(--ink);color:#fff;border:0;border-radius:999px;padding:14px 26px;font:700 15px Inter;text-decoration:none;cursor:pointer}
+.btn.gold{background:linear-gradient(135deg,#e2c487,var(--gold));color:#1d1408}
+.btn.line{background:none;color:var(--ink);border:1.5px solid var(--ink)}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding:30px 0 70px}
+.kick{font:600 12px Inter;letter-spacing:.24em;text-transform:uppercase;color:var(--deep)}
+h1{font:700 clamp(40px,6vw,74px)/1.02 "Playfair Display",serif;margin:14px 0 18px;letter-spacing:-.01em}
+h1 em{font-style:italic;color:var(--deep)}
+.hero p{color:#5b4a55;max-width:30em;margin:0 0 26px}
+.acts{display:flex;gap:12px;flex-wrap:wrap}
+.pic{position:relative;border-radius:240px 240px 24px 24px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 30px 60px rgba(184,82,126,.25)}
+.pic img{width:100%;height:100%;object-fit:cover}
+.ph{position:absolute;left:10px;bottom:10px;background:rgba(23,17,26,.72);color:#fff;font:600 11px Inter;padding:5px 10px;border-radius:999px}
+.badge{position:absolute;right:14px;bottom:14px;background:#fff;border-radius:16px;padding:10px 14px;font:700 13px Inter;box-shadow:0 10px 24px rgba(0,0,0,.12)}
+.badge span{display:block;font:500 11px Inter;color:#7a6772}
+section{padding:70px 0}.tint{background:var(--soft)}
+h2{font:700 clamp(30px,4vw,46px)/1.08 "Playfair Display",serif;margin:8px 0 28px}h2 em{font-style:italic;color:var(--deep)}
+.menu{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.card{background:#fff;border-radius:22px;overflow:hidden;display:grid;grid-template-columns:130px 1fr;box-shadow:0 12px 30px rgba(120,60,90,.08)}
+.card .im{position:relative}.card .im img{width:100%;height:100%;object-fit:cover}
+.card .in{padding:18px 20px}.card h3{font:700 21px "Playfair Display",serif;margin:0 0 8px}
+.rows{list-style:none;margin:0;padding:0}.rows li{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px dashed #ecd9e1;font-size:15px}
+.rows li:last-child{border:0}.rows b{color:var(--deep);white-space:nowrap}
+.note{font-size:13px;color:#7a6772;margin-top:14px}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.box{background:#fff;border-radius:22px;padding:24px;box-shadow:0 12px 30px rgba(120,60,90,.08)}
+.box h3{font:700 22px "Playfair Display",serif;margin:0 0 10px}.box ul{margin:0;padding-left:18px;color:#4f3f49}.box li{margin:6px 0}
+.book{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start}
+form{background:#fff;border-radius:24px;padding:26px;box-shadow:0 16px 40px rgba(120,60,90,.12);display:grid;gap:12px}
+label{display:grid;gap:6px;font:600 13px Inter;color:#5b4a55}
+input,select{font:500 16px Inter;padding:12px 14px;border-radius:12px;border:1.5px solid #ead7df;background:#fffafb;width:100%}
+#sent{display:none;background:#eaf6ee;color:#23633a;border-radius:12px;padding:12px;font-weight:600}
+footer{background:var(--ink);color:#cdb9c4;padding:34px 0;font-size:14px}
+footer b{color:#fff}
+.tn{background:#fff;border-top:1px solid #ecd9e1;padding:26px 0;font-size:15px}
+.tn .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:center}
+@media (max-width:820px){.hero,.book{grid-template-columns:1fr}.menu,.cols{grid-template-columns:1fr}.nav nav{display:none}.card{grid-template-columns:104px 1fr}}
+</style></head><body>
+<div class="mock">WEBSITE MOCK-UP made for Sarai by True North Local · not live · prices and photos are placeholders</div>
+<div class="wrap"><header class="nav"><div class="logo">Sarai <em>Beauty Lab</em></div>
+<nav><a href="#menu">Services</a><a href="#prep">Before you come</a><a href="#care">Aftercare</a><a href="#policies">Policies</a></nav>
+<a class="btn" href="#book">Book now</a></header>
+<section class="hero" style="padding-top:20px"><div>
+<div class="kick">Lashes · Hair · Nails · Skin</div>
+<h1>A luxury experience, <em>made for you.</em></h1>
+<p>Lash sets, fills, hair, nails and skin care by Sarai, cosmetology student at TIGI. Pick your service, see the price and book your time in one place.</p>
+<div class="acts"><a class="btn gold" href="#book">Book your appointment</a><a class="btn line" href="#menu">See prices</a></div></div>
+<div class="pic"><img src="../img/preview/sarai/lash-hero.jpg" alt="Close-up of long lashes (placeholder photo)"><span class="ph">Placeholder photo · yours goes here</span>
+<div class="badge">Now booking<span>CA &amp; CO</span></div></div></section></div>
+
+<section class="tint" id="menu"><div class="wrap"><div class="kick">Service menu</div><h2>Everything <em>beauty,</em> one page.</h2>
+<div class="menu">
+<div class="card"><div class="im"><img src="../img/preview/sarai/lash-appt.jpg" alt="Lash appointment (placeholder photo)" loading="lazy"></div><div class="in"><h3>Lash sets</h3><ul class="rows"><li>Classic <b>$ —</b></li><li>Hybrid <b>$ —</b></li><li>Volume <b>$ —</b></li><li>Wispy <b>$ —</b></li></ul></div></div>
+<div class="card"><div class="im"><img src="../img/preview/sarai/lash-hero.jpg" alt="Lashes (placeholder photo)" loading="lazy"></div><div class="in"><h3>Fills</h3><ul class="rows"><li>2-week fill <b>$ —</b></li><li>3-week fill <b>$ —</b></li><li>Removal <b>$ —</b></li></ul></div></div>
+<div class="card"><div class="im"><img src="../img/preview/sarai/hair.jpg" alt="Styled hair (placeholder photo)" loading="lazy"></div><div class="in"><h3>Hair</h3><ul class="rows"><li>Style / blowout <b>$ —</b></li><li>Braids <b>$ —</b></li><li>Color <b>$ —</b></li></ul></div></div>
+<div class="card"><div class="im"><img src="../img/preview/sarai/nails.jpg" alt="Pink manicure (placeholder photo)" loading="lazy"></div><div class="in"><h3>Nails &amp; skin</h3><ul class="rows"><li>Nail set <b>$ —</b></li><li>Fill <b>$ —</b></li><li>Facial <b>$ —</b></li></ul></div></div>
+</div><p class="note">Your real prices from your Pricing highlight go here. Clients see them before they message you.</p></div></section>
+
+<section id="prep"><div class="wrap"><div class="kick">So clients come ready</div><h2>Before, after and <em>the rules.</em></h2>
+<div class="cols">
+<div class="box"><h3>Before you come</h3><ul><li>Arrive with clean lashes, no makeup</li><li>Skip caffeine right before</li><li>Fill out the consent form (link sent when you book)</li></ul></div>
+<div class="box" id="care"><h3>Aftercare</h3><ul><li>Keep lashes dry for the first 24 hours</li><li>Brush daily, no oil-based products</li><li>Book your fill at 2 to 3 weeks</li></ul></div>
+<div class="box" id="policies"><h3>Policies</h3><ul><li>Deposit to hold your time</li><li>Late and cancellation rules</li><li>What counts as a fill</li></ul></div>
+</div><p class="note">Sample wording. We'd copy your exact text from your highlights so it matches what you already tell clients.</p></div></section>
+
+<section class="tint" id="book"><div class="wrap book"><div><div class="kick">Booking</div><h2>Pick a time. <em>That's it.</em></h2>
+<p style="color:#5b4a55;max-width:28em">No more back-and-forth in DMs. Clients choose a service and a time, you get a text or email, and you confirm. It can also connect to the booking app you already use.</p>
+<p class="note">One link in your bio instead of a Linktree: prices, policies, aftercare and booking together.</p></div>
+<form onsubmit="event.preventDefault();document.getElementById('sent').style.display='block'">
+<label>Your name<input placeholder="Your name" required></label>
+<label>Service<select><option>Classic lash set</option><option>Hybrid lash set</option><option>Volume lash set</option><option>Lash fill</option><option>Hair</option><option>Nails</option><option>Facial</option></select></label>
+<label>Day and time you'd like<input placeholder="Saturday morning"></label>
+<label>Phone or Instagram<input placeholder="@yourhandle"></label>
+<button class="btn gold" type="submit">Request my appointment</button>
+<div id="sent">Request sent ✓ (this is a demo, nothing was actually sent)</div></form></div></section>
+
+<div class="tn"><div class="wrap"><span><b>Like it?</b> This is a free mock-up. The real one is built with your photos, your prices and your wording, and you approve every page.</span>
+<a class="btn" href="https://truenorthlocalhq.com/">True North Local</a></div></div>
+<footer><div class="wrap"><b>Sarai Beauty Lab</b> · mock-up by True North Local (truenorthlocalhq.com). Not an official site. Placeholder photos from Unsplash; no client photos used. We'll take this page down any time you ask.</div></footer>
+</body></html>
