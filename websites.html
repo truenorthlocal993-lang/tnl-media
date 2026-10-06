@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://truenorthlocal.goatcounter.com https://truenorthlocal.goatcounter.com; media-src 'self'">
 <title>Websites · True North Local</title>
 <meta name="description" content="Most customers look you up on their phone before they call. We build a fast, clear site with your services, your real work and a call button that&#x27;s always in reach.">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&display=swap">
 <style>:root{--night:#0b1220;--ink:#0f172a;--text:#334155;--muted:#64748b;--line:#e2e8f0;
 --soft:#f5f6f8;--accent:#e8672c;--accent2:#f08a4b;--head:"Manrope","Inter",system-ui,sans-serif;
 --sans:"Inter",-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
@@ -37,7 +37,89 @@ h1,h2,h3{font-family:var(--head);color:var(--ink);margin:0;letter-spacing:-.02em
 .steps div::before{content:counter(s);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font:700 15px var(--head);display:grid;place-items:center}
 .more{background:var(--soft);padding:40px 0}.more .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
 .more a{background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 16px;text-decoration:none;color:var(--ink);font-weight:600;font-size:15px}
-footer{padding:26px 0;color:var(--muted);font-size:14px}</style></head><body>
+footer{padding:26px 0;color:var(--muted);font-size:14px}
+/* === 2026-10-06 futuristic + clean theme layer === */
+:root{--night:#05070d;--night2:#0c111c;--ink:#f3f6fb;--text:#aab4c6;--muted:#7c879b;
+--paper:#05070d;--soft:#05070d;--line:rgba(255,255,255,.1);--accent:#ff6b2c;--accent2:#ffa24d;
+--glass:rgba(255,255,255,.035);--head:"Sora","Manrope","Inter",system-ui,sans-serif;
+--mono:"JetBrains Mono",ui-monospace,Consolas,monospace}
+html{color-scheme:dark;background:#05070d}
+body{background:#05070d;color:var(--text)}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:
+linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px) 0 0/100% 72px,
+linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px) 0 0/72px 100%;
+-webkit-mask-image:radial-gradient(ellipse at 50% 20%,#000 20%,transparent 78%);
+mask-image:radial-gradient(ellipse at 50% 20%,#000 20%,transparent 78%)}
+body::after{content:"";position:fixed;left:50%;top:-30vh;width:90vw;height:70vh;z-index:0;
+transform:translateX(-50%);pointer-events:none;
+background:radial-gradient(ellipse,rgba(255,107,44,.13),transparent 65%)}
+main,header,footer,section{position:relative;z-index:1}
+h1,h2,h3,h4{font-family:var(--head);color:var(--ink);font-weight:600;letter-spacing:-.035em}
+h1 em,h2 em,.hero h1 em{font:inherit;font-style:normal;letter-spacing:inherit;
+background:linear-gradient(90deg,#ff6b2c,#ffa24d 55%,#ffe0b8);-webkit-background-clip:text;
+background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.eyebrow,.kick,.label{font-family:var(--mono);font-weight:500;letter-spacing:.14em;
+color:var(--accent2)}
+a{color:inherit}
+.top{background:rgba(5,7,13,.72);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+border-bottom:1px solid var(--line)}
+.band,.band.soft,.dark,.statement,.live,.trades,.faq,.trust-band,.closing{background:transparent}
+.band,.statement,.live,.trades,.trust-band,.closing,footer{border-top:1px solid var(--line)}
+.live{background:radial-gradient(circle at 85% 20%,rgba(255,107,44,.1),transparent 55%)}
+.sub,.lede,.note,p{color:var(--text)}
+.btn{border-radius:12px;font-family:var(--head);font-weight:600;letter-spacing:-.01em}
+.btn.solid{background:linear-gradient(135deg,#ff6b2c,#ff9a4a);color:#0a0603;border:0;
+box-shadow:0 0 0 1px rgba(255,160,90,.45),0 12px 40px rgba(255,107,44,.32)}
+.btn.solid:hover{box-shadow:0 0 0 1px rgba(255,190,130,.8),0 16px 50px rgba(255,107,44,.5)}
+.btn.line,.btn.line.light{background:rgba(255,255,255,.03);color:#fff;
+border:1px solid rgba(255,255,255,.2)}
+.btn.line:hover{border-color:rgba(255,160,90,.7)}
+.card,.svc-grid li,.commits li,.steps4 li,.also li,.timeline li,.box,.faq details,
+.show figure,.mc-calc{background:var(--glass);border:1px solid var(--line);
+-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.card{border-radius:18px}
+.card:hover,.svc-grid li:hover{border-color:rgba(255,122,61,.55);
+box-shadow:0 0 0 1px rgba(255,122,61,.2),0 24px 60px rgba(255,107,44,.12)}
+.card .tag,.tag{font-family:var(--mono);background:rgba(255,107,44,.14);color:#ffb37f;
+border:1px solid rgba(255,122,61,.4)}
+.price{color:var(--ink);font-family:var(--head)}.price small{color:var(--muted)}
+.card ul li,.also li span{color:var(--text)}.also li b{color:var(--ink)}
+.also li{border-radius:12px;padding:12px 16px}
+.steps4 li{padding:12px 16px;border-radius:12px;margin-bottom:10px}
+.steps4 li::before,.timeline .node{background:transparent;color:var(--accent2);
+border:1px solid rgba(255,122,61,.6);font-family:var(--mono)}
+.pills li{background:var(--glass);border:1px solid var(--line);color:var(--text);
+font-family:var(--mono);font-size:12px}
+.faq summary{color:var(--ink)}.faq details{border-radius:14px;padding-inline:18px}
+.sample-note,.photo-note,.extras,.soon{color:var(--muted)}
+.trade-grid li,.guide img,.side-photo,.devices .dlaptop,.devices .dphone{
+border:1px solid var(--line)}
+.side-photo{height:auto;aspect-ratio:16/9;object-fit:cover;box-shadow:0 30px 70px rgba(0,0,0,.5)}
+.timeline li{padding:14px 18px;border-radius:14px;margin-bottom:12px}
+.hero h1,.photo-hero h1,h2{font-weight:600}
+.mc-calc input{background:rgba(255,255,255,.04);border:1px solid var(--line);color:#fff}
+.mc-out b{background:linear-gradient(90deg,#ff6b2c,#ffa24d);-webkit-background-clip:text;
+background-clip:text;color:transparent}
+.chat-panel{background:#0c111c;border:1px solid var(--line);color:var(--text)}
+.chat-form input{background:#05070d;color:#fff;border:1px solid var(--line)}
+.chat-log .me,.chat-form button{background:linear-gradient(135deg,#ff6b2c,#ff9a4a);color:#0a0603}
+.chat-log .bot{background:rgba(255,255,255,.06);color:var(--text)}
+.chat-quick button{color:var(--text)}.chat-head{color:var(--ink)}
+.pick button[aria-pressed=true]{background:linear-gradient(135deg,#ff6b2c,#ff9a4a);
+color:#0a0603;border-color:transparent}
+.menu nav{background:#0c111c;border:1px solid var(--line)}
+footer{color:var(--muted)}footer h4{color:var(--ink)}
+/* service pages + shop leftovers */
+.more{background:transparent}.more a,.pick button{background:var(--glass);color:var(--text);
+border:1px solid var(--line)}.more a:hover,.pick button:hover{border-color:rgba(255,122,61,.6);
+color:#fff}
+.bundle,.promise,.spec,.note,.stage{background:var(--glass);border:1px solid var(--line);
+color:var(--text)}.bundle h3,.promise h3,.bundle b{color:var(--ink)}
+.photo{background:#0c111c;border:1px solid var(--line)}
+.colors input{background:#0c111c;color:#fff;border:1px solid var(--line)}
+.frame.wide .fbar{background:#0c111c}
+::selection{background:rgba(255,107,44,.35);color:#fff}
+</style></head><body>
 <header class="top"><div class="wrap topbar"><a class="brand" href="index.html">True North Local</a><nav class="nav" aria-label="Services"><a href="websites.html" aria-current="page">Websites</a><a href="listing-videos.html">Listing videos</a><a href="phone-assistant.html">AI phone assistant</a><a href="social-posting.html">Social media posting</a><a href="ads.html">Ads</a><a href="video-ads.html">Video ads</a><a href="shop.html">Merch shop</a></nav></div></header>
 <section class="hero"><div class="wrap grid"><div><h1>A website that gets you the call.</h1><p>Most customers look you up on their phone before they call. We build a fast, clear site with your services, your real work and a call button that&#x27;s always in reach.</p>
 <p class="price">$600 one-time (normally $1,997, first 5 clients) + optional $29 a month<small>Founding pricing</small></p><div class="cta"><a class="btn solid" href="https://buy.stripe.com/00wfZjdhGcwZfTw7bj1gs03?client_reference_id=site__website_build">Order now</a><a class="btn line" href="index.html#pricing">All prices</a></div></div>
