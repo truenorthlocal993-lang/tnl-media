@@ -1,9 +1,9 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://truenorthlocal.goatcounter.com https://truenorthlocal.goatcounter.com; media-src 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://truenorthlocal.goatcounter.com https://truenorthlocal.goatcounter.com; media-src 'self'; script-src 'unsafe-inline'">
 <title>Ads · True North Local</title>
 <meta name="description" content="A set of image ads built from your services, your offers and real photos of your jobs, ready to post or run.">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&family=Fredoka:wght@500;600;700&display=swap">
 <style>:root{--night:#0b1220;--ink:#0f172a;--text:#334155;--muted:#64748b;--line:#e2e8f0;
 --soft:#f5f6f8;--accent:#e8672c;--accent2:#f08a4b;--head:"Manrope","Inter",system-ui,sans-serif;
 --sans:"Inter",-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
@@ -119,15 +119,96 @@ color:var(--text)}.bundle h3,.promise h3,.bundle b{color:var(--ink)}
 .colors input{background:#0c111c;color:#fff;border:1px solid var(--line)}
 .frame.wide .fbar{background:#0c111c}
 ::selection{background:rgba(18,181,173,.35);color:#fff}
+.lk{padding:56px 0}.lk h2{font-size:clamp(28px,3.6vw,40px);margin:8px 0 10px}
+.lk-grid{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:34px;align-items:start;margin-top:26px}
+.lk-ctl{display:grid;gap:20px}.lk-ctl label,.lk-ctl legend{display:block;font:600 12px var(--mono,monospace);letter-spacing:.1em;text-transform:uppercase;color:#9fb0c8;margin-bottom:8px;padding:0}
+.lk-ctl fieldset{border:0;margin:0;padding:0;min-width:0}
+.lk-ctl input[type=text]{width:100%;font:500 16px Inter,sans-serif;padding:13px 15px;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.16);color:#fff}
+.lk-row{display:flex;flex-wrap:wrap;gap:8px}
+.lk-row button{font:600 15px Inter,sans-serif;padding:10px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.2);background:transparent;color:#e6edf7;cursor:pointer}
+.lk-row button[aria-pressed=true]{background:#fff;color:#0b1220;border-color:#fff}
+.lk-sw button{width:38px;height:38px;padding:0;border-radius:50%;border:3px solid transparent;background:var(--c);box-shadow:0 0 0 1px rgba(255,255,255,.25)}
+.lk-sw button[aria-pressed=true]{border-color:#fff;background:var(--c);box-shadow:0 0 0 2px var(--c)}
+.lk-pitch{margin:8px 0 0;font-size:14px;color:#9fb0c8;min-height:1.4em}
+.lk-order{display:grid;gap:10px}.lk-order .btn{justify-content:center;text-align:center}
+.lk-order small{font-size:13px;color:#9fb0c8}
+.lk-out{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:start}
+.lk-out figure{margin:0}.lk-out figcaption{margin-top:10px;font-size:13px;color:#9fb0c8;text-align:center}
+.lk-cap{font:600 12px var(--mono,monospace);letter-spacing:.1em;text-transform:uppercase;color:#9fb0c8;margin:0 0 10px;text-align:center}
+/* preview: shared tokens. --pk = chosen colour */
+.pv{--pk:#12b5ad;--bg:#0c1220;--fg:#fff;--mut:#c5cedc;--card:#161f33;--head:"Sora","Manrope",sans-serif;--r:14px;--btnfg:#fff}
+.pv.s-luxe{--bg:#0b0b0b;--card:#171717;--mut:#cfc9bd;--head:"Playfair Display",Georgia,serif;--r:4px}
+.pv.s-fresh{--bg:#f7fafc;--fg:#0f172a;--mut:#475569;--card:#fff;--r:16px}
+.pv.s-sweet{--bg:#fff6ef;--fg:#3b2330;--mut:#6b5560;--card:#fff;--head:"Fredoka","Manrope",sans-serif;--r:26px}
+.ph{max-width:300px;margin-inline:auto;border:9px solid #05070d;border-radius:38px;overflow:hidden;background:var(--bg);color:var(--fg);box-shadow:0 30px 70px rgba(0,0,0,.5);font-family:Inter,sans-serif}
+.ph-top{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;font:700 13px var(--head);letter-spacing:.02em}
+.ph-top b{max-width:70%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ph-top i{font-style:normal;background:var(--pk);color:var(--btnfg);font:700 11px Inter,sans-serif;padding:6px 10px;border-radius:999px}
+.ph-hero{position:relative;height:210px;overflow:hidden}.ph-hero img{width:100%;height:100%;object-fit:cover;display:block}
+.ph-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 30%,var(--bg) 100%)}
+.ph-body{padding:0 16px 18px;margin-top:-34px;position:relative}
+.ph-body h3{margin:0;font:700 25px/1.08 var(--head);color:var(--fg);letter-spacing:-.02em}
+.s-bold .ph-body h3{text-transform:uppercase;font-size:23px}.s-luxe .ph-body h3{font-weight:600}
+.ph-body p{margin:8px 0 14px;font-size:13.5px;line-height:1.45;color:var(--mut)}
+.ph-btn{display:block;text-align:center;background:var(--pk);color:var(--btnfg);font:700 15px Inter,sans-serif;padding:13px;border-radius:var(--r)}
+.s-luxe .ph-btn{background:transparent;color:var(--pk);border:1.5px solid var(--pk);letter-spacing:.12em;text-transform:uppercase;font-size:12.5px}
+.ph-chips{display:grid;gap:8px;margin-top:14px}.ph-chips span{background:var(--card);border-radius:var(--r);padding:11px 13px;font:600 13.5px Inter,sans-serif;display:flex;align-items:center;gap:10px;box-shadow:0 1px 0 rgba(0,0,0,.06)}
+.ph-chips span::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--pk);flex:none}
+.ad{position:relative;aspect-ratio:4/5;max-width:340px;margin-inline:auto;border-radius:18px;overflow:hidden;background:var(--bg);color:var(--fg);box-shadow:0 30px 70px rgba(0,0,0,.5);font-family:Inter,sans-serif;display:flex;flex-direction:column}
+.ad-img{position:relative;flex:1 1 58%;min-height:0;overflow:hidden}.ad-img img{width:100%;height:100%;object-fit:cover;display:block}
+.ad-tag{position:absolute;left:14px;top:14px;background:var(--pk);color:var(--btnfg);font:700 12px Inter,sans-serif;padding:7px 12px;border-radius:999px}
+.s-luxe .ad-tag{border-radius:2px;letter-spacing:.1em;text-transform:uppercase}
+.ad-txt{padding:16px 18px 18px;border-top:5px solid var(--pk)}
+.ad-txt h3{margin:0;font:700 24px/1.1 var(--head);color:var(--fg);letter-spacing:-.02em}
+.s-bold .ad-txt h3{text-transform:uppercase}
+.ad-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:12px}
+.ad-foot b{font:700 13px var(--head);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ad-foot i{font-style:normal;flex:none;background:var(--pk);color:var(--btnfg);font:700 13px Inter,sans-serif;padding:9px 14px;border-radius:var(--r)}
+@media(max-width:980px){.lk-grid{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:620px){.lk-out{grid-template-columns:minmax(0,1fr)}}
 </style></head><body>
 <header class="top"><div class="wrap topbar"><a class="brand" href="index.html">True North Local</a><nav class="nav" aria-label="Services"><a href="websites.html">Websites</a><a href="listing-videos.html">Listing videos</a><a href="phone-assistant.html">AI phone assistant</a><a href="social-posting.html">Social media posting</a><a href="ads.html" aria-current="page">Ads</a><a href="video-ads.html">Video ads</a><a href="shop.html">Merch shop</a></nav></div></header>
 <section class="hero"><div class="wrap grid"><div><h1>Ads made from your real work.</h1><p>A set of image ads built from your services, your offers and real photos of your jobs, ready to post or run.</p>
-<p class="price">$197 one-time<small>Founding pricing</small></p><div class="cta"><a class="btn solid" href="https://buy.stripe.com/eVq00ldhGgNfcHkcvD1gs01?client_reference_id=site__custom_ads">Order now</a><a class="btn line" href="index.html#pricing">All prices</a></div></div>
+<p class="price">$197 one-time<small>Founding pricing</small></p><div class="cta"><a class="btn solid" href="#design">Design yours live</a><a class="btn line" href="https://buy.stripe.com/eVq00ldhGgNfcHkcvD1gs01?client_reference_id=site__custom_ads">Order now</a><a class="btn line" href="index.html#pricing">All prices</a></div></div>
 <figure class="media"><div class="frame tall"><video src="social/reels/five-second-test.mp4" autoplay muted loop playsinline controls preload="metadata"></video></div><figcaption>A short ad we made.</figcaption></figure></div></section>
-<section class="body"><div class="wrap cols"><div><h2>What you get</h2><ul><li>A set of ads sized for Instagram and Facebook</li><li>Written to get the call, not just likes</li><li>Your photos, never stock pretending to be you</li><li>Yours to post or run</li></ul></div>
+<section class="lk" id="design"><div class="wrap" id="lk">
+<h2>Try your look, <em>live.</em></h2>
+<p>Type your business name, pick a style and a colour, and watch your website and ad change. Nothing is sent anywhere until you order.</p>
+<div class="lk-grid"><div class="lk-ctl">
+<div><label for="lk-name">Your business name</label><input type="text" id="lk-name" maxlength="40" autocomplete="organization" placeholder="Harbor Plumbing"></div>
+<fieldset><legend>What you do</legend><div class="lk-row"><button type="button" data-pick="trade" value="plumber">Plumber</button><button type="button" data-pick="trade" value="electrician">Electrician</button><button type="button" data-pick="trade" value="salon">Salon</button></div></fieldset>
+<fieldset><legend>Style</legend><div class="lk-row"><button type="button" data-pick="style" value="bold">Bold</button><button type="button" data-pick="style" value="luxe">Luxe</button><button type="button" data-pick="style" value="fresh">Fresh</button><button type="button" data-pick="style" value="sweet">Sweet</button></div><p class="lk-pitch" data-t="pitch"></p></fieldset>
+<fieldset><legend>Colour</legend><div class="lk-row lk-sw"><button type="button" data-pick="color" value="teal" style="--c:#12b5ad" aria-label="Teal" title="Teal"></button><button type="button" data-pick="color" value="orange" style="--c:#f2711c" aria-label="Orange" title="Orange"></button><button type="button" data-pick="color" value="blue" style="--c:#2f6bff" aria-label="Blue" title="Blue"></button><button type="button" data-pick="color" value="red" style="--c:#e23d3d" aria-label="Red" title="Red"></button><button type="button" data-pick="color" value="green" style="--c:#2f9e5b" aria-label="Green" title="Green"></button><button type="button" data-pick="color" value="gold" style="--c:#c9a045" aria-label="Gold" title="Gold"></button><button type="button" data-pick="color" value="pink" style="--c:#ec5a8b" aria-label="Pink" title="Pink"></button></div></fieldset>
+<div class="lk-order"><a class="btn solid" data-order="https://buy.stripe.com/eVq00ldhGgNfcHkcvD1gs01" data-item="custom_ads" href="https://buy.stripe.com/eVq00ldhGgNfcHkcvD1gs01?client_reference_id=site-bold-teal__custom_ads">Order this ads look · $197</a><a class="btn line" data-order="https://buy.stripe.com/00wfZjdhGcwZfTw7bj1gs03" data-item="website_build" href="https://buy.stripe.com/00wfZjdhGcwZfTw7bj1gs03?client_reference_id=site-bold-teal__website_build">Order this website look · $600</a><small>Your pick: <b data-t="look">Bold · Teal</b>. We build the real thing with your photos and wording, and you approve it before it goes live. You can still change your mind after ordering.</small></div>
+</div><div><div class="lk-out"><figure><p class="lk-cap">Your ad</p><div class="pv adw s-bold" data-kind="adw"><div class="ad">
+<div class="ad-img"><img data-t="photo" src="img/home/plumber.jpg" alt="Plumber at work (stock photo)" width="700" height="467"><span class="ad-tag" data-t="offer">Same-day visits this week</span></div>
+<div class="ad-txt"><h3 data-t="ad">Leak today? We&#x27;re on the way.</h3><div class="ad-foot"><b data-t="biz">Harbor Plumbing</b><i data-t="cta">Call now</i></div></div></div></div></figure><figure><p class="lk-cap">Your website</p><div class="pv site s-bold" data-kind="site"><div class="ph">
+<div class="ph-top"><b data-t="biz">Harbor Plumbing</b><i data-t="cta">Call now</i></div>
+<div class="ph-hero"><img data-t="photo" src="img/home/plumber.jpg" alt="Plumber at work (stock photo)" width="700" height="467"></div>
+<div class="ph-body"><h3 data-t="head">Leaks fixed fast. Done right.</h3><p data-t="sub">Licensed plumbers for repairs, drains and water heaters.</p>
+<span class="ph-btn" data-t="cta">Call now</span><div class="ph-chips" data-t="chips"></div></div></div></div></figure></div>
+<p class="lk-pitch" style="text-align:center;margin-top:16px">Live preview with stock photos (Unsplash) and sample wording. Not a real business.</p></div></div>
+<script type="application/json" id="lk-data">{"trade": "plumber", "style": "bold", "color": "teal", "trades": {"plumber": {"label": "Plumber", "photo": "img/home/plumber.jpg", "sample": "Harbor Plumbing", "head": "Leaks fixed fast. Done right.", "sub": "Licensed plumbers for repairs, drains and water heaters.", "chips": ["Leak repair", "Drains", "Water heaters"], "cta": "Call now", "ad": "Leak today? We're on the way.", "offer": "Same-day visits this week"}, "electrician": {"label": "Electrician", "photo": "img/home/electrician.jpg", "sample": "Bright Line Electric", "head": "Safe wiring. Clean work.", "sub": "Licensed electricians for panels, lighting and repairs.", "chips": ["Panel upgrades", "Lighting", "Repairs"], "cta": "Get a quote", "ad": "Flickering lights? Let's fix that.", "offer": "Free estimate on panel upgrades"}, "salon": {"label": "Salon", "photo": "img/home/salon.jpg", "sample": "Studio Nine Salon", "head": "Walk out feeling new.", "sub": "Cuts, colour and styling by people who listen.", "chips": ["Cuts", "Colour", "Styling"], "cta": "Book now", "ad": "Your next great hair day.", "offer": "New client special this month"}}, "styles": {"bold": "Dark, big type, lots of energy", "luxe": "Black with elegant serif type", "fresh": "Light, airy and clean", "sweet": "Warm, rounded and friendly"}, "colors": {"teal": "#12b5ad", "orange": "#f2711c", "blue": "#2f6bff", "red": "#e23d3d", "green": "#2f9e5b", "gold": "#c9a045", "pink": "#ec5a8b"}, "labels": {"bold": "Bold", "luxe": "Luxe", "fresh": "Fresh", "sweet": "Sweet", "teal": "Teal", "orange": "Orange", "blue": "Blue", "red": "Red", "green": "Green", "gold": "Gold", "pink": "Pink"}}</script></div></section><section class="body"><div class="wrap cols"><div><h2>What you get</h2><ul><li>A set of ads sized for Instagram and Facebook</li><li>Written to get the call, not just likes</li><li>Your photos, never stock pretending to be you</li><li>Yours to post or run</li></ul></div>
 <div><h2>How it works</h2><div class="steps"><div><b>Tell us about your business.</b> A short call or a few messages.</div>
 <div><b>We build it, you approve it.</b> Nothing goes live until you say yes.</div>
 <div><b>It works for you.</b> We keep it running and fix what needs fixing.</div></div></div></div></section>
 <section class="more"><div class="wrap"><h2>More ways we help</h2><div class="row"><a href="websites.html">Websites</a><a href="listing-videos.html">Listing videos</a><a href="phone-assistant.html">AI phone assistant</a><a href="social-posting.html">Social media posting</a><a href="video-ads.html">Video ads</a><a href="shop.html">Merch shop</a></div></div></section>
 <footer class="wrap"><a href="index.html">Home</a> · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · Questions? <a href="mailto:truenorthlocal993@gmail.com">truenorthlocal993@gmail.com</a></footer>
-<img src="https://truenorthlocal.goatcounter.com/count?p=/ads.html" alt="" width="1" height="1" style="position:absolute;left:-9999px"></body></html>
+<script>(function(){var d=JSON.parse(document.getElementById("lk-data").textContent);
+var root=document.getElementById("lk"),pv=root.querySelectorAll(".pv"),name=document.getElementById("lk-name");
+var s={trade:d.trade,style:d.style,color:d.color};
+function set(sel,text){root.querySelectorAll(sel).forEach(function(n){n.textContent=text;});}
+function draw(){var t=d.trades[s.trade],c=d.colors[s.color],biz=name.value.trim()||t.sample;
+pv.forEach(function(p){p.className="pv "+p.getAttribute("data-kind")+" s-"+s.style;p.style.setProperty("--pk",c);
+p.style.setProperty("--btnfg",s.color==="gold"?"#1a1405":"#fff");});
+set("[data-t=biz]",biz);set("[data-t=head]",t.head);set("[data-t=sub]",t.sub);set("[data-t=cta]",t.cta);
+set("[data-t=ad]",t.ad);set("[data-t=offer]",t.offer);
+root.querySelectorAll("[data-t=photo]").forEach(function(i){i.src=t.photo;i.alt=t.label+" at work (stock photo)";});
+var chips=root.querySelector("[data-t=chips]");chips.textContent="";t.chips.forEach(function(x){var e=document.createElement("span");e.textContent=x;chips.appendChild(e);});
+root.querySelector("[data-t=pitch]").textContent=d.styles[s.style];
+root.querySelectorAll("[data-pick]").forEach(function(b){b.setAttribute("aria-pressed",String(s[b.getAttribute("data-pick")]===b.value));});
+root.querySelectorAll("[data-order]").forEach(function(a){var base=a.getAttribute("data-order"),item=a.getAttribute("data-item");
+a.href=base+"?client_reference_id=site-"+s.style+"-"+s.color+"__"+item;});
+set("[data-t=look]",d.labels[s.style]+" \u00b7 "+d.labels[s.color]);}
+root.addEventListener("click",function(ev){var b=ev.target.closest("[data-pick]");if(!b)return;s[b.getAttribute("data-pick")]=b.value;draw();});
+name.addEventListener("input",draw);draw();})();</script><img src="https://truenorthlocal.goatcounter.com/count?p=/ads.html" alt="" width="1" height="1" style="position:absolute;left:-9999px"></body></html>
