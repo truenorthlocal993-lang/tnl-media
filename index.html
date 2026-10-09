@@ -255,6 +255,32 @@ color:var(--text)}.bundle h3,.promise h3,.bundle b{color:var(--ink)}
 .soon a{color:var(--accent2);font-weight:600}
 .closing .two{text-align:left;align-items:start}.closing .two .eyebrow{justify-content:flex-start}.closing .two h2{margin-left:0}
 @media (max-width:900px){.trade-grid{grid-template-columns:minmax(0,1fr)}}
+.mi{padding:26px 0 70px}
+.mi-screen{position:relative;aspect-ratio:16/9;max-width:980px;margin:22px auto 0;border-radius:22px;overflow:hidden;
+border:1px solid rgba(255,255,255,.14);background:#061022;
+background-image:linear-gradient(rgba(120,170,220,.11) 1px,transparent 1px),linear-gradient(90deg,rgba(120,170,220,.11) 1px,transparent 1px);
+background-size:44px 44px;box-shadow:0 40px 90px rgba(0,0,0,.55),0 0 80px rgba(18,181,173,.12)}
+.mi-screen::before{content:"";position:absolute;left:0;right:0;top:0;height:12%;background:linear-gradient(180deg,rgba(79,224,212,0),rgba(79,224,212,.09),rgba(79,224,212,0));animation:mi-scan 7s linear infinite;pointer-events:none}
+.mi-sc{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:6% 8%;opacity:0}
+.mi-k{font:600 clamp(11px,1.5vw,15px) var(--mono,monospace);letter-spacing:.2em;text-transform:uppercase;color:#4fe0d4;margin:0 0 .8em}
+.mi-h{margin:0;font:700 clamp(26px,5.6vw,66px)/1.02 var(--head,sans-serif);letter-spacing:-.035em;color:#fff;text-shadow:0 0 32px rgba(120,200,255,.5)}
+.mi-h em{font-style:normal;color:#4fe0d4;text-shadow:0 0 32px rgba(18,181,173,.75)}
+.mi-p{margin:.9em 0 0;font:500 clamp(13px,1.9vw,21px)/1.4 Inter,sans-serif;color:#c9d6ea;max-width:26em}
+.mi-two{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:5%;align-items:center}
+.mi-phone{width:min(100%,190px);justify-self:center}.mi-phone path,.mi-phone rect{fill:none;stroke:#bfe9ff;stroke-width:2.2;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:mi-d2 16s ease-in-out infinite}
+.mi-call{display:inline-block;margin-top:1.1em;padding:.7em 1.4em;border-radius:999px;background:#12b5ad;color:#04201f;font:700 clamp(12px,1.7vw,18px) Inter,sans-serif;animation:mi-pulse 1.6s ease-out infinite}
+.mi-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4%;margin-top:1.6em;position:relative}
+.mi-steps svg{position:absolute;left:0;right:0;top:-14px;width:100%;height:10px;overflow:visible}
+.mi-steps svg path{fill:none;stroke:#4fe0d4;stroke-width:2;stroke-dasharray:1;stroke-dashoffset:1;animation:mi-d3 16s ease-in-out infinite}
+.mi-step{border:1px solid rgba(190,230,255,.45);border-radius:14px;padding:.9em 1em;background:rgba(6,16,34,.72)}
+.mi-step b{display:block;font:600 clamp(10px,1.3vw,13px) var(--mono,monospace);letter-spacing:.16em;color:#4fe0d4}
+.mi-step span{display:block;margin-top:.35em;font:600 clamp(13px,2vw,22px) var(--head,sans-serif);color:#fff}
+.mi-s4{align-items:center;text-align:center}.mi-s4 .mi-h{font-size:clamp(30px,7.4vw,92px);text-transform:uppercase;letter-spacing:-.02em}
+.mi-bar{width:min(46%,300px);height:10px;border-radius:8px;background:#12b5ad;margin-top:1.4em;transform-origin:left;animation:mi-bar 16s ease-out infinite;box-shadow:0 0 26px rgba(18,181,173,.8)}
+.mi-note{margin:14px auto 0;max-width:980px;font-size:13px;color:var(--muted,#7c879b);text-align:center}
+@keyframes mi-s1{1.50%{opacity:1}23.50%{opacity:1}25.00%,100%{opacity:0}}@keyframes mi-s2{0%,25.00%{opacity:0}26.50%{opacity:1}48.50%{opacity:1}50.00%,100%{opacity:0}}@keyframes mi-s3{0%,50.00%{opacity:0}51.50%{opacity:1}73.50%{opacity:1}75.00%,100%{opacity:0}}@keyframes mi-s4{0%,75.00%{opacity:0}76.50%{opacity:1}98.50%{opacity:1}}@keyframes mi-r1a{0%,1.50%{opacity:0;transform:translateY(26px);filter:blur(6px)}3.70%,100%{opacity:1;transform:none;filter:none}}@keyframes mi-r1b{0%,4.70%{opacity:0;transform:translateY(26px);filter:blur(6px)}6.90%,100%{opacity:1;transform:none;filter:none}}@keyframes mi-r1c{0%,7.90%{opacity:0;transform:translateY(26px);filter:blur(6px)}10.10%,100%{opacity:1;transform:none;filter:none}}@keyframes mi-r2a{0%,26.50%{opacity:0;transform:translateY(26px);filter:blur(6px)}28.70%,100%{opacity:1;transform:none;filter:none}}@keyframes mi-r2b{0%,29.70%{opacity:0;transform:translateY(26px);filter:blur(6px)}31.90%,100%{opacity:1;transform:none;filter:none}}@keyframes mi-r2c{0%,32.90%{opacity:0;transform:translateY(26px);filter:blur(6px)}35.10%,100%{opacity:1;transform:none;filter:none}}@keyframes mi-r3a{0%,51.50%{opacity:0;transform:translateY(26px);filter:blur(6px)}53.70%,100%{opacity:1;transform:none;filter:none}}@keyframes mi-r3b{0%,54.70%{opacity:0;transform:translateY(26px);filter:blur(6px)}56.90%,100%{opacity:1;transform:none;filter:none}}@keyframes mi-r3c{0%,57.90%{opacity:0;transform:translateY(26px);filter:blur(6px)}60.10%,100%{opacity:1;transform:none;filter:none}}@keyframes mi-r4a{0%,76.50%{opacity:0;transform:translateY(26px);filter:blur(6px)}78.70%,100%{opacity:1;transform:none;filter:none}}@keyframes mi-r4b{0%,79.70%{opacity:0;transform:translateY(26px);filter:blur(6px)}81.90%,100%{opacity:1;transform:none;filter:none}}@keyframes mi-r4c{0%,82.90%{opacity:0;transform:translateY(26px);filter:blur(6px)}85.10%,100%{opacity:1;transform:none;filter:none}}@keyframes mi-d2{0%,28.00%{stroke-dashoffset:1}36.00%,100%{stroke-dashoffset:0}}@keyframes mi-d3{0%,53.00%{stroke-dashoffset:1}62.00%,100%{stroke-dashoffset:0}}@keyframes mi-pulse{0%,100%{box-shadow:0 0 0 0 rgba(18,181,173,.55)}50%{box-shadow:0 0 0 14px rgba(18,181,173,0)}}@keyframes mi-bar{0%,84.00%{transform:scaleX(0)}89.00%,100%{transform:scaleX(1)}}@keyframes mi-scan{0%{transform:translateY(-100%)}100%{transform:translateY(900%)}}.mi-s1{animation:mi-s1 16s linear infinite}.mi-s1 .a{animation:mi-r1a 16s ease-out infinite}.mi-s1 .b{animation:mi-r1b 16s ease-out infinite}.mi-s1 .c{animation:mi-r1c 16s ease-out infinite}.mi-s2{animation:mi-s2 16s linear infinite}.mi-s2 .a{animation:mi-r2a 16s ease-out infinite}.mi-s2 .b{animation:mi-r2b 16s ease-out infinite}.mi-s2 .c{animation:mi-r2c 16s ease-out infinite}.mi-s3{animation:mi-s3 16s linear infinite}.mi-s3 .a{animation:mi-r3a 16s ease-out infinite}.mi-s3 .b{animation:mi-r3b 16s ease-out infinite}.mi-s3 .c{animation:mi-r3c 16s ease-out infinite}.mi-s4{animation:mi-s4 16s linear infinite}.mi-s4 .a{animation:mi-r4a 16s ease-out infinite}.mi-s4 .b{animation:mi-r4b 16s ease-out infinite}.mi-s4 .c{animation:mi-r4c 16s ease-out infinite}
+@media (max-width:640px){.mi-two{grid-template-columns:minmax(0,1fr)}.mi-phone{display:none}.mi-sc{padding:7% 7%}}
+@media (prefers-reduced-motion:reduce){.mi-screen::before,.mi-sc,.mi-sc *{animation:none!important}.mi-s4{opacity:1}.mi-bar{transform:none}}
 </style></head><body>
 <header class="top"><div class="wrap topbar"><a class="brand" href="#top"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 2 16 20 12 16.5 8 20Z" fill="#f4f1ea"/><path d="M12 2 12 16.5 8 20Z" fill="#12b5ad"/></svg><span>True North Local</span></a>
 <nav class="links" aria-label="Main"><a href="#live">Work</a><a href="#pricing">Pricing</a><a href="#order">How it works</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav><a class="btn solid small" href="#pricing">See prices</a>
@@ -266,7 +292,19 @@ color:var(--text)}.bundle h3,.promise h3,.bundle b{color:var(--ink)}
 <p class="lede">A clear site and ads made from your real work, for plumbers, electricians, salons and other local services.</p>
 <div class="actions"><a class="btn solid" href="https://buy.stripe.com/eVq00ldhGgNfcHkcvD1gs01?client_reference_id=site__custom_ads">Get ads &middot; $197</a><a class="btn line light" href="https://buy.stripe.com/00wfZjdhGcwZfTw7bj1gs03?client_reference_id=site__website_build">Get a website &middot; $600 + $29/mo</a><a class="demo-link" href="birch-lane.html">Open a demo <span aria-hidden="true">&rarr;</span></a></div>
 <p class="note trust">You approve everything · no passwords</p></div></div><p class="photo-credit">Photo: Unsplash (stock, not a client)</p></section>
-<section class="dark live" id="live"><div class="wrap live-grid">
+<section class="dark mi" id="motion" aria-label="How True North Local works, in four short scenes"><div class="wrap">
+<div class="mi-screen" role="img" aria-label="Animated explainer: customers look you up on their phone first; you order, send photos and approve; True North Local builds it.">
+<div class="mi-sc mi-s1"><p class="mi-k a">What if</p><h3 class="mi-h b">your next customer<br><em>found you first?</em></h3>
+<p class="mi-p c">Before they call anyone, they look you up.</p></div>
+<div class="mi-sc mi-s2"><div class="mi-two"><div><p class="mi-k a">On their phone</p><h3 class="mi-h b">They decide in <em>seconds.</em></h3>
+<p class="mi-p c">A clear page, your real work and one button to call you.</p><span class="mi-call c">Call now</span></div>
+<svg class="mi-phone" viewBox="0 0 120 220" aria-hidden="true"><rect x="6" y="6" width="108" height="208" rx="20" pathLength="1"/><path d="M44 18h32" pathLength="1"/><rect x="20" y="38" width="80" height="62" rx="8" pathLength="1"/><path d="M20 116h80M20 132h58M20 148h68" pathLength="1"/><rect x="20" y="168" width="80" height="26" rx="13" pathLength="1"/></svg></div></div>
+<div class="mi-sc mi-s3"><p class="mi-k a">How it works</p><h3 class="mi-h b">We build it. <em>You approve it.</em></h3>
+<div class="mi-steps c"><svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M0 5h100" pathLength="1"/></svg>
+<div class="mi-step"><b>01</b><span>Order</span></div><div class="mi-step"><b>02</b><span>Send photos</span></div><div class="mi-step"><b>03</b><span>Approve</span></div></div></div>
+<div class="mi-sc mi-s4"><p class="mi-k a">This is</p><h3 class="mi-h b">True North Local</h3>
+<p class="mi-p c">Websites &amp; ads for local businesses</p><i class="mi-bar"></i></div>
+</div><p class="mi-note">You approve everything · no passwords</p></div></section><section class="dark live" id="live"><div class="wrap live-grid">
 <div class="live-copy reveal"><p class="eyebrow">Sample sites you can open</p>
 <h2>See it before <em>you buy it.</em></h2>
 <p>Two full sample sites we built for fictional businesses. Open one on your phone and tap
