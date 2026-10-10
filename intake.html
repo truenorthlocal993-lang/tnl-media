@@ -1,0 +1,119 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; script-src 'unsafe-inline'">
+<title>Start your website · True North Local</title>
+<meta name="description" content="Tell True North Local about your business so we can build your website preview.">
+<meta name="robots" content="noindex"><meta name="theme-color" content="#061022">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&display=swap">
+<style>*{box-sizing:border-box}body{margin:0;font:400 17px/1.6 "Inter",system-ui,sans-serif}
+.wrap{width:min(760px,100% - 36px);margin-inline:auto}.top{position:sticky;top:0;z-index:5}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
+.brand{font:600 15px var(--head);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:#fff}
+.hero{padding:clamp(34px,6vw,70px) 0 20px}h1{font-size:clamp(34px,5.4vw,56px);line-height:1.04;margin:12px 0 14px}
+.lede{margin:0 0 8px;font-size:19px}form{display:grid;gap:16px;padding:10px 0 60px}
+label{display:grid;gap:6px;font:500 13px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+label i{font-style:normal;text-transform:none;letter-spacing:0;color:var(--accent2)}
+input,textarea{font:500 16px Inter,sans-serif;padding:13px 15px;border-radius:12px;width:100%;background:rgba(255,255,255,.05);border:1px solid var(--line);color:#fff}
+input:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
+.btn{display:inline-flex;justify-content:center;padding:17px 26px;font-size:18px;border:0;cursor:pointer}
+.note{margin:0;font-size:14px}.done{padding:12px 14px;border-radius:12px;border:1px solid var(--accent);font-size:15px}
+footer{padding:26px 0;font-size:14px}footer a{color:var(--accent2)}
+
+/* === 2026-10-06 futuristic + clean theme layer === */
+:root{--night:#05070d;--night2:#0c111c;--ink:#f3f6fb;--text:#aab4c6;--muted:#7c879b;
+--paper:#05070d;--soft:#05070d;--line:rgba(255,255,255,.1);--accent:#12b5ad;--accent2:#4fe0d4;
+--glass:rgba(255,255,255,.035);--head:"Sora","Manrope","Inter",system-ui,sans-serif;
+--mono:"JetBrains Mono",ui-monospace,Consolas,monospace}
+html{color-scheme:dark;background:#05070d}
+body{background:#05070d;color:var(--text)}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:
+linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px) 0 0/100% 72px,
+linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px) 0 0/72px 100%;
+-webkit-mask-image:radial-gradient(ellipse at 50% 20%,#000 20%,transparent 78%);
+mask-image:radial-gradient(ellipse at 50% 20%,#000 20%,transparent 78%)}
+body::after{content:"";position:fixed;left:50%;top:-30vh;width:90vw;height:70vh;z-index:0;
+transform:translateX(-50%);pointer-events:none;
+background:radial-gradient(ellipse,rgba(18,181,173,.13),transparent 65%)}
+main,header,footer,section{position:relative;z-index:1}
+h1,h2,h3,h4{font-family:var(--head);color:var(--ink);font-weight:600;letter-spacing:-.035em}
+h1 em,h2 em,.hero h1 em{font:inherit;font-style:normal;letter-spacing:inherit;
+background:linear-gradient(90deg,#12b5ad,#4fe0d4 60%,#b6f5ee);-webkit-background-clip:text;
+background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.eyebrow,.kick,.label{font-family:var(--mono);font-weight:500;letter-spacing:.14em;
+color:var(--accent2)}
+a{color:inherit}
+.top{background:rgba(5,7,13,.72);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+border-bottom:1px solid var(--line)}
+.band,.band.soft,.dark,.statement,.live,.trades,.faq,.trust-band,.closing{background:transparent}
+.band,.statement,.live,.trades,.trust-band,.closing,footer{border-top:1px solid var(--line)}
+.live{background:radial-gradient(circle at 85% 20%,rgba(18,181,173,.1),transparent 55%)}
+.sub,.lede,.note,p{color:var(--text)}
+.btn{border-radius:12px;font-family:var(--head);font-weight:600;letter-spacing:-.01em}
+.btn.solid{background:linear-gradient(135deg,#12b5ad,#4fe0d4);color:#0a0603;border:0;
+box-shadow:0 0 0 1px rgba(79,224,212,.45),0 12px 40px rgba(18,181,173,.32)}
+.btn.solid:hover{box-shadow:0 0 0 1px rgba(154,240,232,.8),0 16px 50px rgba(18,181,173,.5)}
+.btn.line,.btn.line.light{background:rgba(255,255,255,.03);color:#fff;
+border:1px solid rgba(255,255,255,.2)}
+.btn.line:hover{border-color:rgba(79,224,212,.7)}
+.card,.svc-grid li,.commits li,.steps4 li,.also li,.timeline li,.box,.faq details,
+.show figure,.mc-calc{background:var(--glass);border:1px solid var(--line);
+-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.card{border-radius:18px}
+.card:hover,.svc-grid li:hover{border-color:rgba(28,196,186,.55);
+box-shadow:0 0 0 1px rgba(28,196,186,.2),0 24px 60px rgba(18,181,173,.12)}
+.card .tag,.tag{font-family:var(--mono);background:rgba(18,181,173,.14);color:#9af0e8;
+border:1px solid rgba(28,196,186,.4)}
+.price{color:var(--ink);font-family:var(--head)}.price small{color:var(--muted)}
+.card ul li,.also li span{color:var(--text)}.also li b{color:var(--ink)}
+.also li{border-radius:12px;padding:12px 16px}
+.steps4 li{padding:12px 16px;border-radius:12px;margin-bottom:10px}
+.steps4 li::before,.timeline .node{background:transparent;color:var(--accent2);
+border:1px solid rgba(28,196,186,.6);font-family:var(--mono)}
+.pills li{background:var(--glass);border:1px solid var(--line);color:var(--text);
+font-family:var(--mono);font-size:12px}
+.faq summary{color:var(--ink)}.faq details{border-radius:14px;padding-inline:18px}
+.sample-note,.photo-note,.extras,.soon{color:var(--muted)}
+.trade-grid li,.guide img,.side-photo,.devices .dlaptop,.devices .dphone{
+border:1px solid var(--line)}
+.side-photo{height:auto;aspect-ratio:16/9;object-fit:cover;box-shadow:0 30px 70px rgba(0,0,0,.5)}
+.timeline li{padding:14px 18px;border-radius:14px;margin-bottom:12px}
+.hero h1,.photo-hero h1,h2{font-weight:600}
+.mc-calc input{background:rgba(255,255,255,.04);border:1px solid var(--line);color:#fff}
+.mc-out b{background:linear-gradient(90deg,#12b5ad,#4fe0d4);-webkit-background-clip:text;
+background-clip:text;color:transparent}
+.chat-panel{background:#0c111c;border:1px solid var(--line);color:var(--text)}
+.chat-form input{background:#05070d;color:#fff;border:1px solid var(--line)}
+.chat-log .me,.chat-form button{background:linear-gradient(135deg,#12b5ad,#4fe0d4);color:#0a0603}
+.chat-log .bot{background:rgba(255,255,255,.06);color:var(--text)}
+.chat-quick button{color:var(--text)}.chat-head{color:var(--ink)}
+.pick button[aria-pressed=true]{background:linear-gradient(135deg,#12b5ad,#4fe0d4);
+color:#0a0603;border-color:transparent}
+.menu nav{background:#0c111c;border:1px solid var(--line)}
+footer{color:var(--muted)}footer h4{color:var(--ink)}
+/* service pages + shop leftovers */
+.more{background:transparent}.more a,.pick button{background:var(--glass);color:var(--text);
+border:1px solid var(--line)}.more a:hover,.pick button:hover{border-color:rgba(28,196,186,.6);
+color:#fff}
+.bundle,.promise,.spec,.note,.stage{background:var(--glass);border:1px solid var(--line);
+color:var(--text)}.bundle h3,.promise h3,.bundle b{color:var(--ink)}
+.photo{background:#0c111c;border:1px solid var(--line)}
+.colors input{background:#0c111c;color:#fff;border:1px solid var(--line)}
+.frame.wide .fbar{background:#0c111c}
+::selection{background:rgba(18,181,173,.35);color:#fff}
+</style></head><body>
+<header class="top"><div class="wrap topbar"><a class="brand" href="index.html">True North Local</a></div></header>
+<main><section class="hero"><div class="wrap"><p class="eyebrow">You ordered a website</p>
+<h1>Tell us about <em>your business.</em></h1>
+<p class="lede">Two minutes. We build your preview from these answers and email it to you. Nothing goes live until you approve it.</p></div></section>
+<div class="wrap"><form id="intake"><label>Business name<input name="business" maxlength="160" placeholder="True North Local" required></label><label>Business phone<input name="phone" maxlength="160" placeholder="The number customers should call" required></label><label>Towns or area served<input name="area" maxlength="160" placeholder="Staten Island and Brooklyn" required></label><label>Main services<textarea name="services" rows="3" maxlength="600" placeholder="Leak repair, drains, water heaters" required></textarea></label><label>Hours <i>(optional)</i><input name="hours" maxlength="160" placeholder="Mon-Fri 8-6, Sat 9-2"></label><label>Website address <i>(optional)</i><input name="domain" maxlength="160" placeholder="Leave blank for our free address, or type your own domain"></label><label>About your business <i>(optional)</i><textarea name="about" rows="3" maxlength="600" placeholder="A sentence or two in your own words"></textarea></label><label>Order number <i>(optional)</i><input name="order" maxlength="160" placeholder="On your receipt page, like TNL-ABC123 (optional)"></label>
+<button class="btn solid" type="submit">Send my details</button>
+<p id="done" class="done" hidden>Your email app should open with your answers filled in. Press send there, from the same email address you paid with. If nothing opened, email the answers to <b>truenorthlocal993@gmail.com</b>.</p>
+<p class="note">Use the email address you paid with, so we can match your order. Have photos? <a href="photos.html" style="color:var(--accent2)">Send them here</a>. We never ask for a password.</p>
+<noscript><p class="note">Or email your answers to <a href="mailto:truenorthlocal993@gmail.com?subject=Website%20details">truenorthlocal993@gmail.com</a>.</p></noscript></form></div></main>
+<footer><div class="wrap"><a href="index.html">Back to True North Local</a> · <a href="privacy.html">Privacy</a></div></footer>
+<script type="application/json" id="id">{"email": "truenorthlocal993@gmail.com", "subject": "Website details", "fields": [["business", "Business name"], ["phone", "Business phone"], ["area", "Towns or area served"], ["services", "Main services"], ["hours", "Hours"], ["domain", "Website address"], ["about", "About your business"], ["order", "Order number"]]}</script><script>(function(){var f=document.getElementById("intake"),d=JSON.parse(document.getElementById("id").textContent);
+f.addEventListener("submit",function(ev){ev.preventDefault();var lines=[];
+d.fields.forEach(function(x){var v=(f.elements[x[0]].value||"").trim().replace(/\s*\n\s*/g,"; ");if(v)lines.push(x[1]+": "+v);});
+var biz=(f.elements.business.value||"").trim();
+window.location.href="mailto:"+d.email+"?subject="+encodeURIComponent(d.subject+": "+biz)+"&body="+encodeURIComponent(lines.join("\n")+"\n\n(Sent from the form on truenorthlocalhq.com. Press send.)");
+document.getElementById("done").hidden=false;});})();</script></body></html>
