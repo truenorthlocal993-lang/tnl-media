@@ -79,7 +79,7 @@ footer .cta strong{font:600 26px Fraunces,Georgia,serif;color:#fff}footer .cta a
 <label>Pickup time<select id="pickup"></select></label>
 <label>Name for the order<input id="who" maxlength="40" autocomplete="name" placeholder="True North Local"></label>
 <button class="place" id="place" type="button" disabled>Place pickup order</button></div>
-<div class="ok" id="ok" role="status"><p class="kick">Order received</p><h5></h5><p></p><small>This is a sample site: nothing was charged and no order was sent. Want this for your restaurant? <a href="index.html#contact">Talk to True North Local</a>.</small></div></aside>
+<div class="ok" id="ok" role="status"><p class="kick">Order received</p><h5></h5><p id="ok-line"></p><small>This is a sample site: nothing was charged and no order was sent. Want this for your restaurant? <a href="index.html#contact">Talk to True North Local</a>.</small></div></aside>
 <footer><div class="wrap"><div class="cta"><strong>Want a site like this for your restaurant?</strong><a href="index.html#contact">Talk to True North Local</a></div>
 True North Kitchen is a fictional restaurant: a sample site built by True North Local. Dishes, prices and hours are made up. Photos: Unsplash (stock, free license).</div></footer>
 <script type="application/json" id="kd">{"dishes": {"steak": {"name": "Grilled steak, saffron rice", "price": 24, "cx": 0.515, "cy": 0.48, "d": 0.62}, "pasta": {"name": "Seafood pappardelle", "price": 22, "cx": 0.6, "cy": 0.39, "d": 0.68}, "potatoes": {"name": "Crispy potatoes", "price": 14, "cx": 0.5, "cy": 0.48, "d": 0.65}, "garden": {"name": "Garden plate", "price": 13, "cx": 0.5, "cy": 0.48, "d": 0.63}, "sausage": {"name": "Sausage & mash", "price": 16, "cx": 0.58, "cy": 0.5, "d": 0.85}}}</script><script>(function(){var d=JSON.parse(document.getElementById("kd").textContent),cart={},cartBtn=document.getElementById("cart-btn");
@@ -101,13 +101,13 @@ function open(v){drawer.classList.toggle("open",v);scrim.classList.toggle("open"
 cartBtn.onclick=function(){open(true);};scrim.onclick=function(){open(false);};document.getElementById("close").onclick=function(){open(false);};
 document.addEventListener("keydown",function(ev){if(ev.key==="Escape")open(false);});
 document.querySelectorAll("[data-add]").forEach(function(b){b.addEventListener("click",function(){var k=b.getAttribute("data-add");
-cart[k]=(cart[k]||0)+1;render();var plate=b.closest(".dish").querySelector(".plate"),r=plate.getBoundingClientRect(),c=cartBtn.getBoundingClientRect();
+cart[k]=(cart[k]||0)+1;render();count();var plate=b.closest(".dish").querySelector(".plate"),r=plate.getBoundingClientRect(),c=cartBtn.getBoundingClientRect();
 var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 if(!reduce&&plate.animate){var f=document.createElement("div");f.className="fly";f.style.cssText="left:"+r.left+"px;top:"+r.top+"px;width:"+r.width+"px;height:"+r.height+"px";
 var im=document.createElement("img");im.src="img/kitchen/"+k+".jpg";im.alt="";im.setAttribute("style",crop(k));f.appendChild(im);document.body.appendChild(f);
 var dx=c.left+c.width/2-(r.left+r.width/2),dy=c.top+c.height/2-(r.top+r.height/2);
 var a=f.animate([{transform:"translate(0,0) scale(1) rotate(0)",opacity:1},{transform:"translate("+dx*.55+"px,"+(dy*.55-120)+"px) scale(.5) rotate(200deg)",opacity:1,offset:.55},{transform:"translate("+dx+"px,"+dy+"px) scale(.06) rotate(400deg)",opacity:.6}],{duration:900,easing:"cubic-bezier(.5,0,.5,1)"});
-a.onfinish=function(){f.remove();count();cartBtn.classList.add("bump");setTimeout(function(){cartBtn.classList.remove("bump");},260);};}else{count();}
+a.onfinish=function(){f.remove();cartBtn.classList.add("bump");setTimeout(function(){cartBtn.classList.remove("bump");},260);};}else{count();}
 b.classList.add("done");b.querySelector("span").textContent="Added. Add another";});});
 var sel=document.getElementById("pickup"),now=new Date(),t=new Date(now.getTime()+25*60000);t.setMinutes(Math.ceil(t.getMinutes()/15)*15,0,0);
 var close=new Date(now);close.setHours(21,0,0,0);if(t>close){t=new Date(now);t.setDate(t.getDate()+1);t.setHours(11,30,0,0);close=new Date(t);close.setHours(21,0,0,0);}
@@ -115,6 +115,6 @@ var day=t.toDateString()===now.toDateString()?"Today":"Tomorrow";
 while(t<=close&&sel.options.length<24){var o=document.createElement("option");o.textContent=day+", "+t.toLocaleTimeString([],{hour:"numeric",minute:"2-digit"});sel.appendChild(o);t=new Date(t.getTime()+15*60000);}
 document.getElementById("place").onclick=function(){var nm=document.getElementById("who").value.trim();
 var ok=document.getElementById("ok");ok.querySelector("h5").textContent="Order TNK-"+Math.floor(1000+Math.random()*9000);
-ok.querySelector("p").textContent=(nm?nm+", your":"Your")+" pickup is "+sel.value+".";
+document.getElementById("ok-line").textContent=(nm?nm+", your":"Your")+" pickup is "+sel.value+".";
 document.getElementById("checkout").style.display="none";list.style.display="none";ok.classList.add("show");};
 render();count();})();</script></body></html>
