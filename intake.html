@@ -1,7 +1,14 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; script-src 'unsafe-inline'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline' 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https://truenorthlocal.goatcounter.com; media-src 'self'; script-src 'unsafe-inline' 'self'">
 <title>Start your website · True North Local</title>
+<link rel="canonical" href="https://truenorthlocalhq.com/intake.html">
+
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="css/styles.css">
+
 <meta name="description" content="Tell True North Local about your business so we can build your website preview.">
 <meta name="robots" content="noindex"><meta name="theme-color" content="#061022">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&display=swap">
@@ -100,20 +107,71 @@ color:var(--text)}.bundle h3,.promise h3,.bundle b{color:var(--ink)}
 .colors input{background:#0c111c;color:#fff;border:1px solid var(--line)}
 .frame.wide .fbar{background:#0c111c}
 ::selection{background:rgba(18,181,173,.35);color:#fff}
-</style></head><body>
-<header class="top"><div class="wrap topbar"><a class="brand" href="index.html">True North Local</a></div></header>
-<main><section class="hero"><div class="wrap"><p class="eyebrow">You ordered a website</p>
+</style></head><body class="page-light">
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<div class="wrap topbar">
+  <a class="brand" href="index.html"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 2 16 20 12 16.5 8 20Z" fill="#f4f1ea"/><path d="M12 2 12 16.5 8 20Z" fill="#e8672c"/></svg><span>True North Local</span></a>
+  <nav class="links" aria-label="Main"><a href="index.html">Home</a><a href="websites.html">Websites</a><a href="social-posting.html" title="Social media posting" aria-label="Social media posting">Social</a><a href="ads.html">Ads</a><a href="index.html#pricing">Pricing</a><a href="index.html#contact">Contact</a></nav>
+  <a class="btn solid small" href="index.html#contact">Contact</a>
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-drawer" aria-label="Open menu"><span class="bars" aria-hidden="true"></span></button>
+</div>
+</header>
+<div class="drawer-backdrop" hidden></div>
+<aside class="drawer" id="site-drawer" hidden role="dialog" aria-modal="true" aria-label="Menu">
+  <button class="drawer-close" type="button" aria-label="Close menu">&times;</button>
+  <nav aria-label="Mobile"><a href="index.html">Home</a><a href="websites.html">Websites</a><a href="social-posting.html" title="Social media posting" aria-label="Social media posting">Social</a><a href="ads.html">Ads</a><a href="index.html#pricing">Pricing</a><a href="index.html#contact">Contact</a><a class="btn solid small" href="index.html#contact">Contact</a></nav>
+</aside>
+
+<main id="main"><section class="hero simple"><div class="wrap"><p class="eyebrow">You ordered a website</p>
 <h1>Tell us about <em>your business.</em></h1>
 <p class="lede">Two minutes. We build your preview from these answers and email it to you. Nothing goes live until you approve it.</p></div></section>
-<div class="wrap"><form id="intake"><label>Business name<input name="business" maxlength="160" placeholder="True North Local" required></label><label>Business phone<input name="phone" maxlength="160" placeholder="The number customers should call" required></label><label>Towns or area served<input name="area" maxlength="160" placeholder="Staten Island and Brooklyn" required></label><label>Main services<textarea name="services" rows="3" maxlength="600" placeholder="Leak repair, drains, water heaters" required></textarea></label><label>Hours <i>(optional)</i><input name="hours" maxlength="160" placeholder="Mon-Fri 8-6, Sat 9-2"></label><label>Website address <i>(optional)</i><input name="domain" maxlength="160" placeholder="Leave blank for our free address, or type your own domain"></label><label>About your business <i>(optional)</i><textarea name="about" rows="3" maxlength="600" placeholder="A sentence or two in your own words"></textarea></label><label>Order number <i>(optional)</i><input name="order" maxlength="160" placeholder="On your receipt page, like TNL-ABC123 (optional)"></label>
+<div class="wrap intake-grid"><form id="intake"><label>Business name<input type="text" name="business" maxlength="160" placeholder="True North Local" required></label><label>Business phone<input type="text" name="phone" maxlength="160" placeholder="The number customers should call" required></label><label>Towns or area served<input type="text" name="area" maxlength="160" placeholder="Staten Island and Brooklyn" required></label><label>Main services<textarea name="services" rows="3" maxlength="600" placeholder="Leak repair, drains, water heaters" required></textarea></label><label>Hours <i>(optional)</i><input type="text" name="hours" maxlength="160" placeholder="Mon-Fri 8-6, Sat 9-2"></label><label>Website address <i>(optional)</i><input type="text" name="domain" maxlength="160" placeholder="Leave blank for our free address, or type your own domain"></label><label>About your business <i>(optional)</i><textarea name="about" rows="3" maxlength="600" placeholder="A sentence or two in your own words"></textarea></label><label>Order number <i>(optional)</i><input type="text" name="order" maxlength="160" placeholder="On your receipt page, like TNL-ABC123 (optional)"></label>
+<input type="hidden" name="theme" value="Modern">
 <button class="btn solid" type="submit">Send my details</button>
 <p id="done" class="done" hidden>Your email app should open with your answers filled in. Press send there, from the same email address you paid with. If nothing opened, email the answers to <b>truenorthlocal993@gmail.com</b>.</p>
 <p class="note">Use the email address you paid with, so we can match your order. Have photos? <a href="photos.html" style="color:var(--accent2)">Send them here</a>. We never ask for a password.</p>
-<noscript><p class="note">Or email your answers to <a href="mailto:truenorthlocal993@gmail.com?subject=Website%20details">truenorthlocal993@gmail.com</a>.</p></noscript></form></div></main>
+<noscript><p class="note">Or email your answers to <a href="mailto:truenorthlocal993@gmail.com?subject=Website%20details">truenorthlocal993@gmail.com</a>.</p></noscript></form>
+
+<aside class="live-preview" data-live-preview data-form="intake" aria-labelledby="preview-title">
+  <h3 id="preview-title">Live preview</h3>
+  <p class="sr-live" data-preview-live aria-live="polite"></p>
+  <div class="theme-picker"></div>
+  <div class="preview-controls">
+    <label>Business type
+      <select data-preview-type>
+        <option value="">Match what you entered</option>
+        <option value="plumber">Plumber</option>
+        <option value="salon">Salon</option>
+        <option value="hvac">HVAC</option>
+        <option value="restaurant">Restaurant</option>
+        <option value="contractor">Contractor</option>
+        <option value="electrician">Electrician</option>
+        <option value="other">Other</option>
+      </select>
+    </label>
+    <label>Brand color <input data-preview-color type="color" value="#e8672c"></label>
+    <fieldset class="preview-pages">
+      <legend>Pages wanted</legend>
+      <label><input type="checkbox" data-preview-page value="Home" checked> Home</label>
+      <label><input type="checkbox" data-preview-page value="Services" checked> Services</label>
+      <label><input type="checkbox" data-preview-page value="Work"> Work</label>
+      <label><input type="checkbox" data-preview-page value="About"> About</label>
+      <label><input type="checkbox" data-preview-page value="Contact" checked> Contact</label>
+    </fieldset>
+  </div>
+  <div class="device-stage" aria-hidden="true"></div>
+  <button class="btn preview-dl" type="button" data-preview-download>Download preview</button>
+</aside>
+
+</div></main>
 <footer><div class="wrap"><a href="index.html">Back to True North Local</a> · <a href="privacy.html">Privacy</a></div></footer>
-<script type="application/json" id="id">{"email": "truenorthlocal993@gmail.com", "subject": "Website details", "fields": [["business", "Business name"], ["phone", "Business phone"], ["area", "Towns or area served"], ["services", "Main services"], ["hours", "Hours"], ["domain", "Website address"], ["about", "About your business"], ["order", "Order number"]]}</script><script>(function(){var f=document.getElementById("intake"),d=JSON.parse(document.getElementById("id").textContent);
+<script type="application/json" id="id">{"email": "truenorthlocal993@gmail.com", "subject": "Website details", "fields": [["business", "Business name"], ["phone", "Business phone"], ["area", "Towns or area served"], ["services", "Main services"], ["hours", "Hours"], ["domain", "Website address"], ["about", "About your business"], ["order", "Order number"], ["theme", "Theme"]]}</script><script>(function(){var f=document.getElementById("intake"),d=JSON.parse(document.getElementById("id").textContent);
 f.addEventListener("submit",function(ev){ev.preventDefault();var lines=[];
 d.fields.forEach(function(x){var v=(f.elements[x[0]].value||"").trim().replace(/\s*\n\s*/g,"; ");if(v)lines.push(x[1]+": "+v);});
 var biz=(f.elements.business.value||"").trim();
 window.location.href="mailto:"+d.email+"?subject="+encodeURIComponent(d.subject+": "+biz)+"&body="+encodeURIComponent(lines.join("\n")+"\n\n(Sent from the form on truenorthlocalhq.com. Press send.)");
-document.getElementById("done").hidden=false;});})();</script></body></html>
+document.getElementById("done").hidden=false;});})();</script><a class="float-cta" href="index.html#contact">Contact</a>
+<script src="js/nav.js" defer></script>
+<script src="js/preview.js" defer></script>
+</body></html>

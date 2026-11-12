@@ -1,0 +1,5 @@
+# Unchanged Instagram / media archives already on GitHub Pages.
+# The working copy on disk still has them at /workspace/tnl-site-optimize/site/social and video/.
+social/
+audio/
+video/*.mp4

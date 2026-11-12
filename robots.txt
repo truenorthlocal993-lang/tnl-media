@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+Disallow: /intake.html
+Disallow: /thanks.html
+Disallow: /client-guide.html
+Disallow: /shop.html
+Disallow: /video-ads.html
+Disallow: /listing-videos.html
+Disallow: /phone-assistant.html
+Disallow: /preview/
+
+Sitemap: https://truenorthlocalhq.com/sitemap.xml

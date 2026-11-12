@@ -1,7 +1,10 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Birch Lane Heating &amp; Air · Sample site</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="icon" href="favicon.ico">
+<meta name="description" content="Sample heating and cooling website by True North Local for a fictional business, Birch Lane Heating & Air.">
+<link rel="preload" href="img/birch/thermostat.jpg" as="image">
+<link rel="stylesheet" href="fonts/fonts.css">
 <style>
 :root{--navy:#0a1220;--orange:#e8672c;--amber:#ffb24a;--ink:#0b1220}
 *{box-sizing:border-box}html,body{margin:0;background:#05080e;color:#fff;font-family:Inter,system-ui,sans-serif}
@@ -13,9 +16,9 @@ body.intro{overflow:hidden;height:100vh}
 .shot::after{content:"";position:absolute;inset:0}
 #s1{background-image:url(img/birch/thermostat.jpg);filter:saturate(.55) brightness(.62) contrast(1.08)}
 #s1::after{background:linear-gradient(90deg,rgba(4,10,24,.86) 0%,rgba(4,10,24,.35) 55%,rgba(10,30,70,.25) 100%)}
-#s2{background-image:url(img/birch/frost.jpg);filter:saturate(.7) brightness(.8)}
+#s2{filter:saturate(.7) brightness(.8)}
 #s2::after{background:linear-gradient(90deg,rgba(4,12,28,.82),rgba(20,50,95,.3) 70%)}
-#s3{background-image:url(img/birch/snowhouse.jpg);filter:brightness(.8)}
+#s3{filter:brightness(.8)}
 #s3::after{background:linear-gradient(0deg,rgba(3,8,18,.7),rgba(3,8,18,.15) 50%)}
 .vig{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 50%,transparent 55%,rgba(0,0,0,.55))}
 .grain{position:absolute;inset:-50%;pointer-events:none;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
@@ -43,7 +46,7 @@ body.intro{overflow:hidden;height:100vh}
 .btn.hot{background:linear-gradient(135deg,var(--amber),var(--orange));color:#1a0d02;box-shadow:0 12px 30px rgba(232,103,44,.35)}
 .btn.ghost{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(6px)}
 .hero{position:relative;min-height:100vh;display:grid;grid-template-columns:1.1fr .9fr;gap:4vw;align-items:center;padding:70px 6vw 80px;overflow:hidden}
-.hero .bg{position:absolute;inset:-3%;background:url(img/birch/warm-room.jpg) center/cover;z-index:-2}
+.hero .bg{position:absolute;inset:-3%;background:#0a1220 center/cover no-repeat;z-index:-2}
 .hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(6,10,18,.88) 0%,rgba(6,10,18,.62) 42%,rgba(6,10,18,.08) 75%)}
 .pill{display:inline-block;font:600 13px Inter;color:#ffe2c0;background:rgba(255,178,74,.16);border:1px solid rgba(255,178,74,.35);padding:7px 14px;border-radius:999px;margin-bottom:22px}
 .hero h1{margin:0;font:800 clamp(46px,7.2vw,110px)/.95 Manrope;letter-spacing:-.045em;text-shadow:0 6px 40px rgba(0,0,0,.35)}
@@ -104,22 +107,22 @@ footer{padding:36px 6vw;color:#93a1b8;font-size:13px;background:#05080e}
 </div>
 <div id="site">
 <header class="nav"><div class="brand"><i></i>Birch Lane Heating &amp; Air</div>
-<nav><a>Repairs</a><a>Installs</a><a>Tune-ups</a><a>Reviews</a></nav><a class="btn hot" href="#book" data-book>Book a visit</a></header>
+<nav><a>Repairs</a><a>Installs</a><a>Tune-ups</a></nav><a class="btn hot" href="#book" data-book>Book a visit</a></header>
 <section class="hero" id="top"><div class="bg" id="herobg"></div><div>
-<span class="pill">● Techs on call tonight in Springfield</span>
+<span class="pill">● Sample status: techs on call tonight in Springfield</span>
 <h1>Warm again.<br><span class="u"><em>Tonight.</em><svg viewBox="0 0 300 20" preserveAspectRatio="none"><path id="ul" d="M4 14 Q150 2 296 12" fill="none" stroke="#ffb24a" stroke-width="5" stroke-linecap="round" stroke-dasharray="300" stroke-dashoffset="300"/></svg></span></h1>
-<p class="lede">Furnace and AC repair across Springfield. A real person answers day or night, prices are agreed before we start, and most repairs are done on the first visit.</p>
+<p class="lede">Furnace and AC repair across Springfield (sample town). Prices are agreed before work starts. This is a demo, so the booking flow is for show.</p>
 <div class="acts"><a class="btn hot" href="#book" data-book>Book a visit</a><a class="btn ghost" href="tel:5550142">Call 555-0142</a></div>
 <div class="facts"><span>Family-owned</span><span>Up-front prices</span><span>7 days a week</span></div></div>
-<div class="card" id="tech"><div class="row"><div class="av">DR</div><div><b>Dan R. is on the way</b><span class="sub">Furnace repair · ETA <span id="eta">38</span> min</span></div></div>
+<div class="card" id="tech"><div class="row"><div class="av">DR</div><div><b>Sample tech · Dan R. is on the way</b><span class="sub">Furnace repair · ETA <span id="eta">38</span> min</span></div></div>
 <div class="bar"><i id="etabar" style="width:15%"></i></div>
 <div class="temps"><div><small>Now</small><span id="tnow">54°</span></div><div style="text-align:right"><small>After the fix</small>70°</div></div></div>
 </section>
 <section class="svc" id="services"><h2>Four things we <em>fix fast.</em></h2><div class="grid">
-<div class="svcard"><img src="img/birch/thermostat.jpg" alt="A smart thermostat on a wall" loading="lazy"><div class="in"><h3>Furnace repair</h3><p>No heat, strange noises or short cycling. Same night when a tech is free.</p><span class="p">From $89 visit</span></div></div>
-<div class="svcard"><img src="img/birch/techs-roof.jpg" alt="Technicians servicing rooftop AC units" loading="lazy"><div class="in"><h3>AC repair</h3><p>Warm air, leaks or a unit that won't start, fixed before the heat wave.</p><span class="p">From $89 visit</span></div></div>
+<div class="svcard"><img src="img/birch/thermostat.jpg" alt="A smart thermostat on a wall" loading="lazy"><div class="in"><h3>Furnace repair</h3><p>No heat, strange noises or short cycling. Same night when a tech is free.</p><span class="p">Sample price · from $89 a visit</span></div></div>
+<div class="svcard"><img src="img/birch/techs-roof.jpg" alt="Technicians servicing rooftop AC units" loading="lazy"><div class="in"><h3>AC repair</h3><p>Warm air, leaks or a unit that won't start, fixed before the heat wave.</p><span class="p">Sample price · from $89 a visit</span></div></div>
 <div class="svcard"><img src="img/birch/tech-panel.jpg" alt="A technician working on an electrical panel" loading="lazy"><div class="in"><h3>New systems</h3><p>Honest options, a written quote and help with rebates.</p><span class="p">Free estimate</span></div></div>
-<div class="svcard"><img src="img/birch/thermo-hand.jpg" alt="A hand adjusting a digital thermostat" loading="lazy"><div class="in"><h3>Tune-ups</h3><p>A yearly check that catches the 2 AM breakdown before it happens.</p><span class="p">$79 · 45 min</span></div></div>
+<div class="svcard"><img src="img/birch/thermo-hand.jpg" alt="A hand adjusting a digital thermostat" loading="lazy"><div class="in"><h3>Tune-ups</h3><p>A yearly check that catches the 2 AM breakdown before it happens.</p><span class="p">Sample price · $79, 45 min</span></div></div>
 </div></section>
 <footer>Birch Lane Heating &amp; Air is a sample business. Photos: Unsplash (stock, not real staff). Site design by True North Local · truenorthlocalhq.com</footer>
 </div>
@@ -138,8 +141,18 @@ var lin=function(t,a,b){return cl((t-a)/(b-a))};
 function show(el,v,dy){el.style.opacity=v;el.style.transform="translateY("+((1-v)*(dy||24))+"px)"}
 function inout(t,a,b,c,d){return Math.min(span(t,a,b),1-span(t,c,d))}
 function shot(el,v,p,z0,z1,dx){el.style.opacity=v;el.style.transform="scale("+(z0+(z1-z0)*p)+") translateX("+(dx*p)+"%)"}
+function loadBg(el, webp, jpg){
+  if(!el||el.getAttribute("data-bg")==="1")return;
+  el.setAttribute("data-bg","1");
+  el.style.backgroundImage='image-set(url("'+webp+'") type("image/webp"), url("'+jpg+'") type("image/jpeg"))';
+  el.style.backgroundSize="cover";
+  el.style.backgroundPosition="center";
+}
 function apply(t,live){
- shot($("s1"),inout(t,0,.6,3.0,3.6),lin(t,0,3.6),1.04,1.16,-1.5);
+ if(t>=2.0) loadBg($("s2"),"img/birch/frost.webp","img/birch/frost.jpg");
+ if(t>=4.6) loadBg($("s3"),"img/birch/snowhouse.webp","img/birch/snowhouse.jpg");
+ if(t>=7.2) loadBg($("herobg"),"img/birch/warm-room.webp","img/birch/warm-room.jpg");
+ shot($("s1"),Math.max(0.55,inout(t,0,.6,3.0,3.6)),lin(t,0,3.6),1.04,1.16,-1.5);
  shot($("s2"),inout(t,3.0,3.6,5.8,6.4),lin(t,3.0,6.4),1.1,1.0,1);
  shot($("s3"),inout(t,5.8,6.4,8.6,9.2),lin(t,5.8,9.2),1.02,1.12,0);
  $("clock").style.opacity=inout(t,.3,.8,2.8,3.2);
@@ -168,7 +181,7 @@ var m=/t=([0-9.]+)/.exec(location.hash);
 if(m){apply(parseFloat(m[1]),false);return}
 var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
 var start=performance.now(),END=10.8;
-function finish(){document.body.classList.remove("intro");$("stage").style.display="none";apply(END,true)}
+function finish(){loadBg($("herobg"),"img/birch/warm-room.webp","img/birch/warm-room.jpg");document.body.classList.remove("intro");$("stage").style.display="none";apply(END,true)}
 function tick(now){var t=(now-start)/1000;if(t>=END){finish();return}apply(t,true);requestAnimationFrame(tick)}
 if(reduce)finish();else requestAnimationFrame(tick);
 document.addEventListener("keydown",function(){start=-1e9});document.addEventListener("click",function(){if(document.body.classList.contains("intro"))start=-1e9});
